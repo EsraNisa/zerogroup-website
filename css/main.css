@@ -1,0 +1,374 @@
+/* ===========================
+   ZERO GROUP — main.css
+   =========================== */
+
+/* ---- Base ---- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { margin: 0; padding: 0; scroll-behavior: smooth; }
+
+
+input, textarea {
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+}
+
+body {
+  background-color: #000;
+  overflow-x: clip;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ---- Scrollbar ---- */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ---- Scroll offset for fixed navbar ---- */
+[id] { scroll-margin-top: 80px; }
+
+/* ---- Cursor ---- */
+a, button, [role="button"], label, select, summary { cursor: pointer; }
+input, textarea { cursor: text; }
+
+/* ---- Accessibility: allow text selection ---- */
+/* user-select: none kaldırıldı — erişilebilirlik sorunu düzeltildi */
+
+/* ---- Animations ---- */
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes scrollReverse {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+@keyframes fadeIn {
+  0%   { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+
+.animate-scroll         { animation: scroll 40s linear infinite; }
+.animate-scroll-reverse { animation: scrollReverse 40s linear infinite; }
+.animate-fadeIn         { animation: fadeIn 1.5s ease-out forwards; }
+.animate-fadeIn-delay   { animation: fadeIn 1.5s ease-out 0.5s forwards; opacity: 0; }
+.animate-float          { animation: float 6s ease-in-out infinite; }
+.animate-float-delay    { animation: float 6s ease-in-out 1.5s infinite; }
+
+/* ---- Hero Video ---- */
+.hero-video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-bg {
+  position: absolute;
+  top: 50%; left: 50%;
+  min-width: 100%; min-height: 100%;
+  width: auto; height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 0 1.5rem;
+}
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 18vw, 14vw);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 0;
+}
+.hero-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(0.7rem, 1.5vw, 1.1rem);
+  font-weight: 300;
+  letter-spacing: 0.8em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-top: 1rem;
+}
+.sector-hero-text {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+/* ---- Navbar ---- */
+#site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 20;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s;
+  color: #fff;
+}
+
+/* Navbar beyaz alana girdiğinde tüm elemanları siyaha zorlar */
+#site-header.dark-text,
+#site-header.dark-text #zero-logo,
+#site-header.dark-text .nav-link {
+  color: #000 !important;
+}
+
+/* Logonun ikinci kelimesinin (Örn: GROUP) rengini biraz daha yumuşatmak istersen */
+#site-header.dark-text #zero-logo .logo-second {
+  color: #444 !important;
+}
+#zero-logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+#zero-logo .logo-second { font-weight: 300; margin-left: 0.5rem; }
+#zero-logo .logo-active-page {
+  font-family: 'DM Sans', sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  text-transform: lowercase;
+  opacity: 0.9;
+}
+
+nav ul { display: flex; gap: 3rem; list-style: none; margin: 0; padding: 0; }
+nav ul li a, nav ul li button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: inherit;
+  text-decoration: none;
+  background: none;
+  border: none;
+  transition: color 0.2s;
+}
+nav ul li button:hover, nav ul li a:hover { color: #3b82f6; }
+
+/* ---- Bottom Nav ---- */
+#bottom-nav-wrap {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0.75rem;
+  padding-top: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition: opacity 0.3s;
+}
+#bottom-nav-wrap.hidden-nav { opacity: 0; pointer-events: none; }
+
+.bottom-nav-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  border-radius: 9999px;
+  padding: 0.5rem;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: background 0.5s, border 0.5s;
+}
+.bottom-nav-inner.light {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.15) !important;
+}
+.bottom-nav-inner button {
+  padding: 0.5rem 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+.bottom-nav-inner.light button {
+  color: #000 !important;
+}
+.bottom-nav-inner.light button:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+.bottom-nav-inner.light button:hover { background: #e5e7eb; }
+.bottom-nav-inner button.active {
+  background: #2563eb;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 2px 12px rgba(37,99,235,0.4);
+}
+
+/* ---- Marquee strip ---- */
+.marquee-wrap { width: 100%; overflow: hidden; position: relative; }
+.marquee-track { display: flex; width: max-content; }
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ---- Paper texture ---- */
+.paper-texture {
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  background-color: #fdfdfd;
+}
+
+/* ---- Focus styles ---- */
+button:focus-visible, a:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) { outline: none; }
+
+/* ---- Section hero (sector pages) ---- */
+.sector-hero {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.sector-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+.sector-hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+.sector-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+.sector-hero-text {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 0 1rem;
+}
+.sector-hero-text h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  font-size: clamp(1.5rem, 4vw, 3.5rem);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+.sector-hero-text p {
+  color: #fff;
+  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+  max-width: 48rem;
+  line-height: 1.7;
+}
+
+/* ---- Footer ---- */
+#main-footer {
+  position: relative;
+  background: #000;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Bu satır ZERO yazısının taşan kısmını keser (yarım yapar) */
+}
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 6rem 5rem 2.5rem;
+  position: relative;
+  z-index: 5;
+}
+@media (min-width: 768px) {
+  .footer-inner { flex-direction: row; justify-content: space-between; align-items: flex-start; }
+  .footer-inner > div:first-child { flex: 0 0 50%; max-width: 500px; } /* Sol yazıyı daraltır */
+  .footer-inner > div:last-child { flex: 0 0 auto; min-width: 320px; }
+}
+.footer-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.footer-divider { width: 3rem; height: 3px; background: #fff; margin-bottom: 1.5rem; }
+.footer-text { font-size: 0.95rem; color: #d1d5db; line-height: 1.8; }
+.footer-bottom { 
+  text-align: center; 
+  font-size: 0.8rem; 
+  color: #6b7280; 
+  padding: 1rem; 
+  position: relative; 
+  z-index: 5; 
+}
+.footer-bg-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 34vw;
+  font-weight: 900;
+  color: #111; /* Koyu gri, arka planla uyumlu ton */
+  line-height: 0.7;
+  text-align: center;
+  width: 100%;
+  pointer-events: none;
+  margin-bottom: -11vw; /* Yazıyı aşağı itip tam ortadan kesilmesini sağlar */
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  nav { display: none; }
+  .footer-inner { padding: 3rem 2rem 1.5rem; }
+}
+
+/* ---- Utility colors ---- */
+.text-gold { color: #C5A059; }
+.bg-gold   { background-color: #C5A059; }
+.border-gold { border-color: #C5A059; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll, .animate-scroll-reverse, .animate-float, .animate-float-delay {
+    animation: none !important;
+    transform: none !important;
+  }
+}
