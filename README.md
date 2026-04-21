@@ -59,36 +59,21 @@ Bu proje, ZeroGroup şirketi için geliştirilmiş kurumsal web sitesidir.
 ```
 
 file/
-
-&#x20;├── css/
-
-&#x20;│    └── main.css
-
-&#x20;├── gorseller/
-
-&#x20;├── js/
-
-&#x20;│    ├── pages/
-
-&#x20;│    │    ├── home.js
-
-&#x20;│    │    ├── ik.js
-
-&#x20;│    │    ├── lojistik.js
-
-&#x20;│    │    ├── organization.js
-
-&#x20;│    │    └── temizlik.js
-
-&#x20;│    ├── app.js
-
-&#x20;│    ├── components.js
-
-&#x20;│    ├── data.js
-
-&#x20;│    └── utils.js
-
-&#x20;├── index.html
+├── css/
+│    └── main.css
+├── gorseller/
+├── js/
+│    ├── pages/
+│    │    ├── home.js
+│    │    ├── ik.js
+│    │    ├── lojistik.js
+│    │    ├── organization.js
+│    │    └── temizlik.js
+│    ├── app.js
+│    ├── components.js
+│    ├── data.js
+│    └── utils.js
+├── index.html
 
 ```
 
