@@ -82,7 +82,6 @@ const TemizlikPage = {
               <p style="color:#9ca3af;margin:0">Başvurunuzu yapın, sizi en kısa sürede arayalım.</p>
             </div>
             <div style="display:flex;flex-wrap:wrap;gap:1rem">
-              <button onclick="Utils.openLink('${c.applyForm}')" style="padding:1rem 2rem;background:#fff;color:#000;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.05em;border:none;border-radius:999px;white-space:nowrap;transition:background 0.2s" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='#fff'">BAŞVURU FORMU</button>
               <button onclick="Utils.openLink('${c.whatsapp}')" style="padding:1rem 2rem;background:#16a34a;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.05em;border:none;border-radius:999px;white-space:nowrap;transition:background 0.2s;display:flex;align-items:center;gap:0.5rem" onmouseover="this.style.background='#15803d'" onmouseout="this.style.background='#16a34a'"><i class="fa-brands fa-whatsapp text-lg"></i> WHATSAPP</button>
             </div>
           </div>
@@ -93,10 +92,10 @@ const TemizlikPage = {
   renderKurumsal() {
     const c = DATA.contact;
     const items = [
-      { icon: 'fa-broom',                 title: 'Hizmet Kapsamımız',     desc: 'Ofis temizliği, endüstriyel temizlik, cam silme, halı yıkama, derin temizlik ve özel etkinlik sonrası temizlik hizmetleri sunuyoruz. Her kurumun ihtiyacına özel çözüm paketleri hazırlanmaktadır.' },
+      { icon: 'fa-broom',                 title: 'Tesis Yönetimi',     desc: 'Hizmet kapsamımız; insan kaynakları ve personel temini, organizasyon ve etkinlik yönetimi ile profesyonel temizlik hizmetlerini kapsamaktadır. Huzurevleri, eğitim kurumları, AVM’ler ve özel işletmelere yönelik olarak; ihtiyaç analizinden doğru personel seçimine, saha yönetiminden operasyonel sürece kadar tüm aşamalarda profesyonel ve sürdürülebilir çözümler sunuyoruz. Amaç, her alanda yüksek verimlilik ve kesintisiz hizmet standardı sağlamaktır.' },
       { icon: 'fa-file-contract',          title: 'Sözleşme & Güvence',   desc: 'Tüm hizmetlerimiz resmi sözleşme ile güvence altına alınmaktadır. Belirli kalite standartları taahhüt edilmekte ve bu standartlara uyulmaması durumunda tam iade politikası geçerlidir.' },
       { icon: 'fa-magnifying-glass-chart', title: 'Denetim & Kalite Kontrol', desc: 'Sahaya çıkan tüm ekiplerimiz düzenli olarak denetlenmektedir. Müşteri memnuniyet anketleri her dönem sonunda iletilmekte ve geri bildirimler ekip değerlendirmelerine yansıtılmaktadır.' },
-      { icon: 'fa-building',              title: 'Referans Firmalarımız', desc: "Ankara'nın önde gelen AVM'leri, otel zincirleri, hastaneler, üniversite kampüsleri ve kurumsal ofis binaları başta olmak üzere 40'tan fazla aktif kurumsal müşterimiz bulunmaktadır." },
+      { icon: 'fa-building',              title: 'Referans Firmalarımız', desc: "Ankara'nın önde gelen otel zincirleri, huzurevi, okullar ve kurumsal ofis binaları başta olmak üzere 40'tan fazla aktif kurumsal müşterimiz bulunmaktadır." },
       { icon: 'fa-tag',                   title: 'Fiyatlandırma',         desc: 'Fiyatlandırma hizmet türüne, sıklığına ve alana göre değişmektedir. Metrekare bazlı şeffaf fiyat tablomuzu talep edebilir ya da ücretsiz keşif randevusu alabilirsiniz.' },
       { icon: 'fa-certificate',           title: 'İzin & Belge Durumu',  desc: "Şirketimiz tüm yasal izinlere sahip, vergi mükellefi bir kuruluştur. SGK prim ödemeleri düzenli yapılmakta, çalışanlarımız İSG eğitimlerini tamamlamış bireylerden oluşmaktadır." },
     ];
@@ -135,7 +134,6 @@ const TemizlikPage = {
               <p style="color:#bfdbfe;margin:0">Ücretsiz keşif ve teklif için hemen ulaşın.</p>
             </div>
             <div style="display:flex;flex-wrap:wrap;gap:1rem">
-              <button onclick="Utils.openLink('${c.linkedin}')" style="padding:1rem 2rem;background:#fff;color:#2563eb;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.05em;border:none;border-radius:999px;white-space:nowrap;transition:background 0.2s" onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">TEKLİF FORMU</button>
               <button onclick="Utils.openLink('${c.whatsapp}')" style="padding:1rem 2rem;background:#16a34a;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.05em;border:none;border-radius:999px;white-space:nowrap;transition:background 0.2s;display:flex;align-items:center;gap:0.5rem" onmouseover="this.style.background='#15803d'" onmouseout="this.style.background='#16a34a'"><i class="fa-brands fa-whatsapp"></i> WHATSAPP</button>
             </div>
           </div>
@@ -184,9 +182,6 @@ const TemizlikPage = {
             <div style="display:flex;flex-wrap:wrap;gap:1rem">
               <button onclick="Utils.openLink('${c.whatsapp}')" style="padding:1rem 2rem;background:#16a34a;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.05em;border:none;border-radius:999px;transition:background 0.2s;display:flex;align-items:center;gap:0.5rem;box-shadow:0 4px 16px rgba(22,163,74,0.3)" onmouseover="this.style.background='#15803d'" onmouseout="this.style.background='#16a34a'">
                 <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
-              </button>
-              <button onclick="Utils.openLink('${c.applyForm}')" style="padding:1rem 2rem;background:#fff;color:#000;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.05em;border:none;border-radius:999px;transition:background 0.2s;box-shadow:0 4px 16px rgba(255,255,255,0.15)" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='#fff'">
-                BAŞVURU FORMU
               </button>
             </div>
           </div>

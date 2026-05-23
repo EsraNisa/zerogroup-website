@@ -124,9 +124,6 @@ selectCategory(idx) {
               <button onclick="Utils.openLink('${c.whatsapp}')" style="padding:1rem 2rem;background:#16a34a;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.05em;border:none;border-radius:999px;transition:background 0.2s;display:flex;align-items:center;gap:0.5rem;box-shadow:0 4px 16px rgba(22,163,74,0.3)" onmouseover="this.style.background='#15803d'" onmouseout="this.style.background='#16a34a'">
                 <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
               </button>
-              <button onclick="Utils.openLink('${c.applyForm}')" style="padding:1rem 2rem;background:#fff;color:#000;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.05em;border:none;border-radius:999px;transition:background 0.2s;box-shadow:0 4px 16px rgba(255,255,255,0.15)" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='#fff'">
-                BAŞVURU FORMU
-              </button>
             </div>
           </div>
           <div style="height:500px;border-radius:1.5rem;overflow:hidden;border:1px solid #1f2937;position:relative">

@@ -9,7 +9,7 @@ const HomePage = {
   renderHero() {
     const img = DATA.images;
     return `
-      <section id="home-hero" class="hero-video-container" aria-label="Zero Group - Ankara Organizasyon ve Hizmet Grubu">
+      <section id="home-hero" class="hero-video-container" aria-label="Zero Group - Ankara Yönetim ve Hizmet Grubu">
         <video
           id="hero-vid"
           class="video-bg"
@@ -23,7 +23,7 @@ const HomePage = {
         <div class="video-overlay" aria-hidden="true"></div>
         <div class="hero-content">
           <h1 class="hero-title animate-fadeIn">ZERO GROUP</h1>
-          <p class="hero-subtitle animate-fadeIn-delay">Ankara'nın önde gelen organizasyon ve hizmet grubu</p>
+          <p class="hero-subtitle animate-fadeIn-delay">Ankara'nın önde gelen yönetim ve hizmet grubu</p>
         </div>
       </section>`;
   },
@@ -32,16 +32,15 @@ const HomePage = {
   renderAbout() {
     const img = DATA.images;
     return `
-      <section id="about-section" style="background:#000;color:#fff;padding:6rem 2rem;" aria-labelledby="about-heading">
-        <div style="max-width:80rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start">
+      <section id="about-section" style="background:#000;color:#fff;padding:6rem 2rem 10rem;" aria-labelledby="about-heading">
+        <div style="max-width:80rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
           <div>
             <h2 id="about-heading" style="font-family:'Montserrat',sans-serif;font-size:clamp(3rem,8vw,6rem);font-weight:900;letter-spacing:-0.03em;line-height:1;margin-bottom:2rem;color:#aaa">
               WE ARE<br><span style="color:#9ca3af">ZERO</span>
             </h2>
             <div style="width:100%;height:1px;background:#e5e7eb;margin-bottom:2rem"></div>
             <p style="font-size:1.2rem;color:#d1d5db;line-height:1.8;margin-bottom:2rem">
-              2016'da başlayan yolculuğumuz, bugün dört ana sektörde standartları belirleyen bir vizyona dönüştü.
-              İstanbul'dan Ankara'ya uzanan başarı hikayemiz, disiplin ve yaratıcılığın mükemmel uyumudur.
+              İnsan kaynakları alanında güçlü kadromuz ve sürekli gelişen yapımızla, sektörde güvenilir ve tercih edilen lider markalardan biri olmak; istihdam yaratan, doğru personeli doğru iş ile buluşturan ve hizmet kalitesiyle fark oluşturan öncü bir şirket haline gelmektir.
             </p>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">
               <div>
@@ -63,7 +62,7 @@ const HomePage = {
                 <div>
                   <h4 style="font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:700;margin:0 0 0.25rem;color:#000">Eren Doğru</h4>
                   <span style="color:#C5A059;font-size:0.7rem;font-family:monospace;text-transform:uppercase;letter-spacing:0.15em;display:block;margin-bottom:0.5rem">Kurucu</span>
-                  <p style="font-size:0.85rem;color:#6b7280;margin:0">özgeçmiş</p>
+                  <p style="font-size:0.85rem;color:#6b7280;margin:0">10 yılı aşkın süredir organizasyon ve etkinlik yönetimi alanında aktif olarak faaliyet göstermekteyim. Üniversite şenlikleri, konserler ve konsept etkinliklerde uzmanlaşarak, projelerin planlama aşamasından sahadaki tüm operasyonel süreçlerine kadar profesyonel çözümler sunuyorum. Güçlü ekip yönetimi ve yaratıcı yaklaşımım sayesinde her etkinliği yüksek kalite ve maksimum katılımla hayata geçiriyorum.</p>
                 </div>
               </div>
               <div style="width:100%;height:1px;background:#000"></div>
@@ -72,7 +71,7 @@ const HomePage = {
                 <div>
                   <h4 style="font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:700;margin:0 0 0.25rem;color:#000">Haydar Karakaya</h4>
                   <span style="color:#C5A059;font-size:0.7rem;font-family:monospace;text-transform:uppercase;letter-spacing:0.15em;display:block;margin-bottom:0.5rem">Kurucu</span>
-                  <p style="font-size:0.85rem;color:#6b7280;margin:0">Buraya hakkında kısa bir özgeçmiş veya açıklama metni gelecek.</p>
+                  <p style="font-size:0.85rem;color:#6b7280;margin:0">10 yılı aşkın süredir insan kaynakları alanında faaliyet göstererek huzurevleri, okullar, AVM’ler ve çeşitli işletmelere güvenilir ve sürdürülebilir personel temini sağlamaktayım. Doğru personeli doğru işe yerleştirerek iş süreçlerinin verimli ve sorunsuz ilerlemesine katkı sunuyorum. Bunun yanı sıra organizasyon alanındaki tecrübemle projelere bütüncül çözümler üretmekteyim.</p>
                 </div>
               </div>
             </div>
@@ -86,11 +85,11 @@ const HomePage = {
     const refs2x = [...DATA.refs, ...DATA.refs];
     const logos  = refs2x.map((src, i) => `
       <div style="flex-shrink:0;margin:0 1.5rem;width:8rem;height:4rem;display:flex;align-items:center;justify-content:center">
-        <img src="${src}" alt="Referans marka ${(i % DATA.refs.length) + 1}"
-          style="max-height:3rem;max-width:100%;object-fit:contain;opacity:0.5;filter:grayscale(1);transition:opacity 0.3s,filter 0.3s"
-          loading="lazy"
-          onmouseover="this.style.opacity=1;this.style.filter='none'"
-          onmouseout="this.style.opacity=0.5;this.style.filter='grayscale(1)'"
+      <img src="${src}" alt="Referans marka ${(i % DATA.refs.length) + 1}"
+  style="max-height:3rem;max-width:100%;object-fit:contain;opacity:0.8;transition:opacity 0.3s"
+  loading="lazy"
+  onmouseover="this.style.opacity=1"
+  onmouseout="this.style.opacity=0.8"
         />
       </div>`).join('');
 

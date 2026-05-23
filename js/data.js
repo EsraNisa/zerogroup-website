@@ -46,30 +46,30 @@ const DATA = {
   stats: [
     { value: '120+', label: 'Tamamlanan Proje' },
     { value: '40+',  label: 'Marka ile Çalışma' },
-    { value: '8',    label: 'Yıllık Deneyim'   },
+    { value: '10',    label: 'Yıllık Deneyim'   },
     { value: '%95',  label: 'Müşteri Memnuniyeti' },
   ],
 
   /* ---- Müşteri yorumları ---- */
   testimonials: [
     {
-      brand: 'Vodafone Turkey', person: 'Ayşe Kaya', title: 'Etkinlik & Sponsorluk Müdürü',
-      text: 'Zero Group ile çalışmak her seferinde mükemmel bir deneyim oluyor. Organizasyon süreçlerindeki titizlikleri ve profesyonellikleri markaların değerine gerçekten katkı sağlıyor.',
+      brand: '', person: 'A*** K***', title: 'Kurumsal Bina Yönetimi',
+      text: 'Uzun süredir personel temini konusunda birlikte çalışıyoruz. Sağlanan personelin disiplinli, düzenli ve işine hakim olması sayesinde süreçlerimiz çok daha verimli ilerliyor. İhtiyaç duyduğumuzda hızlı çözüm üretmeleri ve kaliteli hizmet anlayışları bizim için en büyük tercih sebebi.',
     },
     {
-      brand: 'Red Bull Türkiye', person: 'Mert Demir', title: 'Brand Manager',
-      text: "Ankara'nın en enerji dolu etkinliklerini Zero Group ile hayata geçirdik. Ekibin yaratıcılığı ve lojistik koordinasyonu oldukça güçlü, her detay eksiksiz düşünülmüş.",
+      brand: '', person: 'M*** D****', title: 'Eğitim Kurumu Yetkilisi',
+      text: "Kurumumuzda ihtiyaç duyduğumuz destek personeli konusunda profesyonel bir hizmet aldık. Personel seçimindeki titizlikleri ve süreci yakından takip etmeleri sayesinde herhangi bir aksaklık yaşamadık. Güvenilir ve sürdürülebilir bir iş ortağı.",
     },
     {
-      brand: 'Anadolu Efes', person: 'Selin Arslan', title: 'Pazarlama Direktörü',
-      text: "Yıllar içinde birçok organizasyon firmasıyla çalıştık ancak Zero Group'un sunduğu hız ve kalite kombinasyonunu başka yerde bulamadık. Gerçek anlamda güvenilir bir iş ortağı.",
+      brand: '', person: 'S**** A*****', title: 'Etkinlik ve Organizasyon Firması',
+      text: "Gerçekleştirdiğimiz etkinliklerde hem personel desteği hem de organizasyon süreçlerinde ciddi katkı sağladılar. Ekip koordinasyonu ve sahadaki hakimiyetleri sayesinde etkinliklerimiz sorunsuz ve başarılı geçti. İşlerini profesyonelce yapan bir ekip.",
     },
   ],
 
   /* ---- İK kategorileri ---- */
   ikCategories: [
-    { label: 'SERVİS & MUTFAK',   sub: 'Garson - Komi - Aşçı',         imageKey: 'IK_GARSON',    desc: 'Deneyimli servis elemanlarımız ve mutfak ekibimizle organizasyonlarınızda kusursuz bir akış sağlıyoruz.' },
-    { label: 'İLETİŞİM MERKEZİ', sub: 'Çağrı Merkezi Personeli',        imageKey: 'IK_CAGRI',     desc: 'Markanızın sesi olmaya hazır, diksiyonu düzgün ve çözüm odaklı ekipler. Müşteri memnuniyetini en üst düzeye çıkarın.' },
+    { label: 'DEPO YÖNETİMİ',     sub: 'Stok ve Malzeme Takibi',         imageKey: 'IK_GARSON',    desc: 'Temizlik ekipmanları ve sarf malzemelerinizi düzenli şekilde yönetin. Stok takibi, ürün kontrolü ve operasyon süreçlerinde tam düzen sağlayın.' },
+    { label: 'TEMİZLİK PERSONELİ', sub: 'Saha ve Görev Personeli',        imageKey: 'IK_CAGRI',     desc: 'Deneyimli ve disiplinli temizlik personelleriyle hizmet kalitenizi yükseltin. Görev alanları, vardiyalar ve ekip yönetimini kolayca planlayın.' },
     { label: 'KARŞILAMA EKİBİ',   sub: 'Resepsiyonist ve Hostes',        imageKey: 'IK_RESEPSIYON',desc: 'Misafirlerinizi ilk andan itibaren büyüleyin. Güler yüzlü, prezentabl ve profesyonel karşılama ekipleri.' },
     { label: 'SAHA TANITIM',      sub: 'Stant ve Event Personeli',       imageKey: 'IK_STANT',     desc: 'Ürün ve hizmetlerinizi sahada en iyi temsil edecek dinamik yüzler. Fuar ve AVM etkinliklerinde markanızın enerjisi.' },
   ],
@@ -86,17 +86,17 @@ const DATA = {
   sectors: {
     ORGANIZATION: {
       title   : "Eğlencenin olduğu her yerde sahne bizim",
-      desc    : "Ankara'nın sosyal yaşamına yön veren etkinliklerimizle, gençlerin enerjisini ve yaratıcılığını sahneye taşıyoruz. Konserlerden temalı partilere, açık mikrofon stand-up gecelerinden özel gün kutlamalarına kadar geniş bir yelpazede etkinlikler düzenliyoruz.",
+      desc    : "Zero Ankara, sıradan etkinlikleri reddeden, eğlenceyi yeniden tanımlayan genç bir organizasyon ekibidir. Ankara’da gece hayatına ve üniversite etkinliklerine kendi tarzını koyar.",
       bgKey   : 'ORG_BG',
     },
     IK: {
       title   : "İNSAN KAYNAKLARI ÇÖZÜMLERİ",
-      desc    : "İş dünyasının dinamiklerine uygun, nitelikli personel temini ve profesyonel bordrolama hizmetleri sunuyoruz. Doğru işe doğru insan prensibiyle çalışıyoruz.",
+      desc    : "İnsan kaynakları alanında hızlı, güvenilir ve çözüm odaklı hizmet sunuyoruz. Doğru personeli doğru işle buluşturuyor, kurumlara sürdürülebilir ve kaliteli istihdam sağlıyoruz.",
       bgKey   : 'IK_BG',
     },
     TEMIZLIK: {
       title   : "TEMİZLİK HİZMETLERİ",
-      desc    : "Profesyonel ekibimiz ve kaliteli ekipmanlarımızla ofis, bina ve etkinlik alanlarında kusursuz temizlik çözümleri sunuyoruz. Hijyen ve güven bizim önceliğimiz.",
+      desc    : "Temizlik hizmetlerinde hızlı, düzenli ve profesyonel çözümler sunuyoruz. Kurumlara ve işletmelere, hijyen standartlarını en üst seviyede tutan güvenilir personel desteği sağlıyoruz.",
       bgKey   : 'IK_BG',
     },
     LOJISTIK: {

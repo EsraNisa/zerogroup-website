@@ -355,10 +355,140 @@ a:focus:not(:focus-visible) { outline: none; }
   z-index: 1;
 }
 
-/* ---- Responsive ---- */
+/* ============================================================
+   MOBİL — Kapsamlı düzeltmeler (max-width: 768px)
+   ============================================================ */
 @media (max-width: 768px) {
+
+  /* ---- Navbar ---- */
   nav { display: none; }
-  .footer-inner { padding: 3rem 2rem 1.5rem; }
+  #site-header { padding: 0.75rem 1rem; }
+  #zero-logo { font-size: 0.95rem; }
+
+  /* ---- Hero ---- */
+  .hero-title { font-size: clamp(3.5rem, 20vw, 6rem); }
+  .hero-subtitle { font-size: 0.6rem; letter-spacing: 0.4em; }
+
+  /* ---- About section (home) ---- */
+  #about-section > div {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  #about-section {
+    padding: 4rem 1.25rem 8rem !important;
+  }
+
+  /* ---- Kurucular kartı ---- */
+  #about-section .founder-card,
+  #about-section > div > div:last-child {
+    padding: 1.5rem !important;
+  }
+
+  /* ---- References / Stats ---- */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+
+  /* ---- Testimonials grid ---- */
+  #testimonials-section > div > div[style*="grid"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ---- Contact section (home) ---- */
+  #contact-section > div {
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+  #contact-section > div > div:last-child {
+    height: 300px !important;
+    min-width: unset !important;
+  }
+
+  /* ---- Sector hero ---- */
+  .sector-hero-text h1 { font-size: clamp(1.4rem, 7vw, 2.5rem); }
+  .sector-hero-text p  { font-size: 0.85rem; }
+
+  /* ---- Split CTA (temizlik) ---- */
+  #temizlik-section-2 { flex-direction: column !important; }
+  #temizlik-section-2 > div { min-height: 50vh; flex: 1 1 100% !important; border-right: none !important; border-bottom: 1px solid #1f2937; }
+
+  /* ---- Ekibimiz / Kurumsal kartlar (temizlik, ik, org) ---- */
+  div[style*="grid-template-columns:repeat(auto-fill,minmax(340px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ---- Org projects — 5 afiş mobilde 2 sütun scroll ---- */
+  #org-section-2 > div > div[style*="display:flex;gap:1rem;align-items:stretch"] {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+    overflow-x: unset !important;
+  }
+
+  /* ---- Album preview fotoğraflar ---- */
+  .album-box div[style*="display:flex;gap:1rem"] {
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+  }
+  .album-box div[style*="display:flex;gap:1rem"] > div {
+    flex: 1 1 calc(50% - 0.25rem) !important;
+    min-width: 0 !important;
+  }
+
+  /* ---- Org contact kartlar ---- */
+  #org-section-3 > div > div[style*="flex-wrap:wrap"] {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .org-card { width: 90vw !important; }
+
+  /* ---- IK sayfa ---- */
+  #ik-main ~ * div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ---- Lojistik sayfa ---- */
+  #lojistik-section-2 div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ---- İletişim bölümleri (temizlik, org, ik, lojistik) ---- */
+  section[id$="-section-3"] > div,
+  section[id$="-section-3"] > div > div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  section[id$="-section-3"] div[style*="height:500px"] {
+    height: 280px !important;
+  }
+
+  /* ---- Floating butonlar — biraz sola çek mobilde ---- */
+  #floating-btns {
+    right: 0.75rem !important;
+    bottom: 5rem !important;
+  }
+
+  /* ---- Bottom nav butonları küçült ---- */
+  .bottom-nav-inner button {
+    padding: 0.45rem 0.65rem !important;
+    font-size: 0.65rem !important;
+  }
+
+  /* ---- Footer ---- */
+  .footer-inner { padding: 3rem 1.5rem 1.5rem; }
+  .footer-bg-text { font-size: 40vw; margin-bottom: -14vw; }
+
+  /* ---- Genel padding düzeltmesi — inline style'ları ezmek için ---- */
+  section[style*="padding:6rem 2rem"],
+  div[style*="padding:6rem 2rem"] {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+  section[style*="padding:5rem 1.25rem"] {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }
 
 /* ---- Utility colors ---- */

@@ -98,7 +98,7 @@ const Navbar = (() => {
 
 /* ---------- BottomNav ---------- */
 const BottomNav = (() => {
-  const views = ['HOME', 'ORGANIZATION', 'IK', 'TEMIZLIK', 'LOJISTIK'];
+  const views = ['HOME', 'IK', 'TEMIZLIK', 'ORGANIZATION', 'LOJISTIK'];
   const labels = { HOME: '<i class="fa-solid fa-house"></i>', ORGANIZATION: 'ORGANİZASYON', IK: 'İK', TEMIZLIK: 'TEMİZLİK', LOJISTIK: 'LOJİSTİK' };
 
   function render(activeView, light) {
@@ -115,6 +115,14 @@ const BottomNav = (() => {
         <div class="bottom-nav-inner ${light ? 'light' : ''}" id="bottom-nav-inner">
           ${buttons}
         </div>
+      </div>
+      <div id="floating-btns" style="position:fixed;right:1.25rem;bottom:5.5rem;display:flex;flex-direction:column;gap:0.6rem;z-index:200">
+        <button onclick="Utils.openLink(DATA.contact.instagram)" aria-label="Instagram" style="width:3rem;height:3rem;border-radius:50%;background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);border:none;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.35);transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform='scale(1.12)';this.style.boxShadow='0 6px 24px rgba(0,0,0,0.45)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.35)'">
+          <i class="fa-brands fa-instagram"></i>
+        </button>
+        <button onclick="Utils.openLink(DATA.contact.whatsapp)" aria-label="WhatsApp" style="width:3rem;height:3rem;border-radius:50%;background:#16a34a;border:none;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.35);transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform='scale(1.12)';this.style.boxShadow='0 6px 24px rgba(22,163,74,0.5)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.35)'">
+          <i class="fa-brands fa-whatsapp"></i>
+        </button>
       </div>`;
   }
 
@@ -126,6 +134,8 @@ const BottomNav = (() => {
   function setVisible(visible) {
     const el = document.getElementById('bottom-nav-wrap');
     if (el) el.classList.toggle('hidden-nav', !visible);
+    const fb = document.getElementById('floating-btns');
+    if (fb) fb.style.display = visible ? 'flex' : 'none';
   }
 
   return { render, updateLight, setVisible };
@@ -143,9 +153,7 @@ const Footer = {
             <h3 class="footer-heading">HAKKIMIZDA</h3>
             <div class="footer-divider"></div>
             <p class="footer-text">
-              2016 yılında İstanbul'da faaliyete geçen Zero Group, kısa sürede sektörde fark yaratarak 2019 yılında
-              merkezini Ankara'ya taşıdı. Bugün, Türkiye'nin önde gelen organizasyon, temizlik, insan kaynakları ve
-              medya hizmetleri sağlayıcısı olarak farklı alanlarda yenilikçi çözümler sunmaktayız.
+             İş ortaklarımızın ihtiyaçlarına en uygun insan kaynağını hızlı ve etkin şekilde sağlayarak sürdürülebilir çözümler sunmak; alanında uzman, disiplinli ve profesyonel ekipler oluşturarak iş süreçlerinin verimli ve sorunsuz ilerlemesine katkıda bulunmak ve bu süreçte kaliteli hizmet anlayışımızdan ödün vermemektir.
             </p>
           </div>
           <div>
