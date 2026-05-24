@@ -7,7 +7,6 @@
 
 html { margin: 0; padding: 0; scroll-behavior: smooth; }
 
-
 input, textarea {
   -webkit-user-select: auto;
   -moz-user-select: auto;
@@ -36,9 +35,6 @@ body {
 /* ---- Cursor ---- */
 a, button, [role="button"], label, select, summary { cursor: pointer; }
 input, textarea { cursor: text; }
-
-/* ---- Accessibility: allow text selection ---- */
-/* user-select: none kaldırıldı — erişilebilirlik sorunu düzeltildi */
 
 /* ---- Animations ---- */
 @keyframes scroll {
@@ -119,6 +115,7 @@ input, textarea { cursor: text; }
   margin: 0 auto;
   padding: 0 20px;
 }
+
 /* ---- Navbar ---- */
 #site-header {
   position: fixed;
@@ -131,15 +128,11 @@ input, textarea { cursor: text; }
   transition: color 0.3s;
   color: #fff;
 }
-
-/* Navbar beyaz alana girdiğinde tüm elemanları siyaha zorlar */
 #site-header.dark-text,
 #site-header.dark-text #zero-logo,
 #site-header.dark-text .nav-link {
   color: #000 !important;
 }
-
-/* Logonun ikinci kelimesinin (Örn: GROUP) rengini biraz daha yumuşatmak istersen */
 #site-header.dark-text #zero-logo .logo-second {
   color: #444 !important;
 }
@@ -224,12 +217,7 @@ nav ul li button:hover, nav ul li a:hover { color: #3b82f6; }
   color: #fff;
   transition: background 0.3s, color 0.3s, transform 0.3s;
 }
-.bottom-nav-inner.light button {
-  color: #000 !important;
-}
-.bottom-nav-inner.light button:hover {
-  background: rgba(0, 0, 0, 0.05) !important;
-}
+.bottom-nav-inner.light button { color: #000 !important; }
 .bottom-nav-inner.light button:hover { background: #e5e7eb; }
 .bottom-nav-inner button.active {
   background: #2563eb;
@@ -269,10 +257,7 @@ a:focus:not(:focus-visible) { outline: none; }
   justify-content: center;
   overflow: hidden;
 }
-.sector-hero-bg {
-  position: absolute;
-  inset: 0;
-}
+.sector-hero-bg { position: absolute; inset: 0; }
 .sector-hero-bg img { width: 100%; height: 100%; object-fit: cover; }
 .sector-hero-overlay {
   position: absolute;
@@ -307,7 +292,7 @@ a:focus:not(:focus-visible) { outline: none; }
   width: 100%;
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Bu satır ZERO yazısının taşan kısmını keser (yarım yapar) */
+  overflow: hidden; 
 }
 .footer-inner {
   display: flex;
@@ -319,7 +304,7 @@ a:focus:not(:focus-visible) { outline: none; }
 }
 @media (min-width: 768px) {
   .footer-inner { flex-direction: row; justify-content: space-between; align-items: flex-start; }
-  .footer-inner > div:first-child { flex: 0 0 50%; max-width: 500px; } /* Sol yazıyı daraltır */
+  .footer-inner > div:first-child { flex: 0 0 50%; max-width: 500px; } 
   .footer-inner > div:last-child { flex: 0 0 auto; min-width: 320px; }
 }
 .footer-heading {
@@ -345,14 +330,31 @@ a:focus:not(:focus-visible) { outline: none; }
   font-family: 'Montserrat', sans-serif;
   font-size: 34vw;
   font-weight: 900;
-  color: #111; /* Koyu gri, arka planla uyumlu ton */
+  color: #111;
   line-height: 0.7;
   text-align: center;
   width: 100%;
   pointer-events: none;
-  margin-bottom: -11vw; /* Yazıyı aşağı itip tam ortadan kesilmesini sağlar */
+  margin-bottom: -11vw; 
   position: relative;
   z-index: 1;
+}
+
+/* ============================================================
+   WEB (Desktop) — Özel Düzeltmeler (Organizasyon afişleri vs.)
+   ============================================================ */
+@media (min-width: 769px) {
+  .poster-group {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+  }
+  .poster-wrapper {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+  }
 }
 
 /* ============================================================
@@ -360,134 +362,105 @@ a:focus:not(:focus-visible) { outline: none; }
    ============================================================ */
 @media (max-width: 768px) {
 
-  /* ---- Navbar ---- */
-  nav { display: none; }
-  #site-header { padding: 0.75rem 1rem; }
-  #zero-logo { font-size: 0.95rem; }
+  /* ---- Genel Navbar & Hero ---- */
+  nav { display: none !important; }
+  #site-header { padding: 0.75rem 1rem !important; }
+  #zero-logo { font-size: 0.95rem !important; }
+  .hero-title { font-size: clamp(3.5rem, 20vw, 6rem) !important; }
+  .hero-subtitle { font-size: 0.6rem !important; letter-spacing: 0.4em !important; }
 
-  /* ---- Hero ---- */
-  .hero-title { font-size: clamp(3.5rem, 20vw, 6rem); }
-  .hero-subtitle { font-size: 0.6rem; letter-spacing: 0.4em; }
-
-  /* ---- About section (home) ---- */
-  #about-section > div {
+  /* ---- Satır içi stilleri ezen genel Grid/Flex kuralları ---- */
+  div[style*="grid-template-columns:1fr 1fr"],
+  div[style*="grid-template-columns: 1fr 1fr"],
+  div[style*="grid-template-columns:repeat(2"],
+  div[style*="grid-template-columns: repeat(2"],
+  div[style*="minmax(340px"], 
+  div[style*="minmax(380px"],
+  div[style*="minmax(400px"] {
     grid-template-columns: 1fr !important;
-    gap: 2rem !important;
-  }
-  #about-section {
-    padding: 4rem 1.25rem 8rem !important;
-  }
-
-  /* ---- Kurucular kartı ---- */
-  #about-section .founder-card,
-  #about-section > div > div:last-child {
-    padding: 1.5rem !important;
-  }
-
-  /* ---- References / Stats ---- */
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
     gap: 1.5rem !important;
   }
 
-  /* ---- Testimonials grid ---- */
-  #testimonials-section > div > div[style*="grid"] {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* ---- Contact section (home) ---- */
-  #contact-section > div {
+  /* ---- İletişim Formları ve Harita Yükseklikleri ---- */
+  #contact-section > div,
+  section[id$="-section-3"] > div,
+  #ik-diger > div > div {
+    display: flex !important;
     flex-direction: column !important;
     gap: 2rem !important;
   }
-  #contact-section > div > div:last-child {
-    height: 300px !important;
+  
+  div[style*="height:500px"], 
+  div[style*="height: 500px"] {
+    height: 320px !important;
+    width: 100% !important;
     min-width: unset !important;
   }
 
-  /* ---- Sector hero ---- */
-  .sector-hero-text h1 { font-size: clamp(1.4rem, 7vw, 2.5rem); }
-  .sector-hero-text p  { font-size: 0.85rem; }
+  /* ---- Home Sayfası Spesifik ---- */
+  #about-section { padding: 4rem 1.25rem 6rem !important; }
+  #about-section .founder-card,
+  #about-section > div > div:last-child { padding: 1.5rem !important; }
 
-  /* ---- Split CTA (temizlik) ---- */
-  #temizlik-section-2 { flex-direction: column !important; }
-  #temizlik-section-2 > div { min-height: 50vh; flex: 1 1 100% !important; border-right: none !important; border-bottom: 1px solid #1f2937; }
-
-  /* ---- Ekibimiz / Kurumsal kartlar (temizlik, ik, org) ---- */
-  div[style*="grid-template-columns:repeat(auto-fill,minmax(340px"] {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* ---- Org projects — 5 afiş mobilde 2 sütun scroll ---- */
-  #org-section-2 > div > div[style*="display:flex;gap:1rem;align-items:stretch"] {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.75rem !important;
-    overflow-x: unset !important;
-  }
-
-  /* ---- Album preview fotoğraflar ---- */
-  .album-box div[style*="display:flex;gap:1rem"] {
-    flex-wrap: wrap !important;
-    gap: 0.5rem !important;
-  }
-  .album-box div[style*="display:flex;gap:1rem"] > div {
-    flex: 1 1 calc(50% - 0.25rem) !important;
-    min-width: 0 !important;
-  }
-
-  /* ---- Org contact kartlar ---- */
+  /* ---- Organizasyon Spesifik ---- */
   #org-section-3 > div > div[style*="flex-wrap:wrap"] {
     flex-direction: column !important;
     align-items: center !important;
   }
   .org-card { width: 90vw !important; }
+  
+  /* ---- İK Sayfası Spesifik ---- */
+  #ik-cat-list {
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    width: 100% !important;
+    white-space: nowrap !important;
+    gap: 1rem !important;
+    padding-bottom: 0.5rem !important;
+    min-width: unset !important;
+  }
+  .ik-cat-item {
+    border-left: none !important;
+    border-bottom: 2px solid #d1d5db !important;
+    padding-left: 0 !important;
+    padding-bottom: 0.5rem !important;
+    display: inline-block !important;
+  }
+  .ik-cat-label { font-size: 1.5rem !important; }
+  .ik-cat-sub { display: none !important; } /* Mobilde alt başlığı gizle (yer tasarrufu) */
 
-  /* ---- IK sayfa ---- */
-  #ik-main ~ * div[style*="grid-template-columns:1fr 1fr"] {
-    grid-template-columns: 1fr !important;
+  /* ---- Temizlik Sayfası Spesifik ---- */
+  #temizlik-section-2 { flex-direction: column !important; }
+  .split-panel { 
+    flex: none !important; 
+    width: 100% !important; 
+    min-height: 40vh !important; 
+    border-right: none !important; 
+    border-bottom: 1px solid #1f2937 !important; 
   }
 
-  /* ---- Lojistik sayfa ---- */
-  #lojistik-section-2 div[style*="grid-template-columns"] {
-    grid-template-columns: 1fr !important;
+  /* ---- Lojistik Spesifik ---- */
+  .paper-texture { 
+    padding: 1.5rem !important; 
+    transform: none !important; 
+    border-width: 4px !important; 
   }
 
-  /* ---- İletişim bölümleri (temizlik, org, ik, lojistik) ---- */
-  section[id$="-section-3"] > div,
-  section[id$="-section-3"] > div > div[style*="grid-template-columns:1fr 1fr"] {
-    grid-template-columns: 1fr !important;
-    gap: 2rem !important;
-  }
-  section[id$="-section-3"] div[style*="height:500px"] {
-    height: 280px !important;
-  }
-
-  /* ---- Floating butonlar — biraz sola çek mobilde ---- */
-  #floating-btns {
-    right: 0.75rem !important;
-    bottom: 5rem !important;
-  }
-
-  /* ---- Bottom nav butonları küçült ---- */
-  .bottom-nav-inner button {
-    padding: 0.45rem 0.65rem !important;
-    font-size: 0.65rem !important;
-  }
+  /* ---- Alt Bar ve Butonlar ---- */
+  #floating-btns { right: 0.75rem !important; bottom: 5rem !important; }
+  .bottom-nav-inner button { padding: 0.45rem 0.65rem !important; font-size: 0.65rem !important; }
 
   /* ---- Footer ---- */
-  .footer-inner { padding: 3rem 1.5rem 1.5rem; }
-  .footer-bg-text { font-size: 40vw; margin-bottom: -14vw; }
+  .footer-inner { padding: 3rem 1.5rem 1.5rem !important; }
+  .footer-bg-text { font-size: 40vw !important; margin-bottom: -14vw !important; }
 
-  /* ---- Genel padding düzeltmesi — inline style'ları ezmek için ---- */
+  /* ---- Genel Padding Düzeltmesi ---- */
   section[style*="padding:6rem 2rem"],
   div[style*="padding:6rem 2rem"] {
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
-  }
-  section[style*="padding:5rem 1.25rem"] {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
   }
 }
 

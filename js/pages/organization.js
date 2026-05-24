@@ -81,7 +81,7 @@ const OrganizationPage = {
           cursor: pointer;
           z-index: 1;
         }
-        .poster-wrapper:hover {
+        .poster-wrapper:hover, .poster-wrapper:active {
           z-index: 10;
         }
         .poster-img-container {
@@ -102,10 +102,12 @@ const OrganizationPage = {
           box-shadow: 0 4px 16px rgba(0,0,0,0.4);
           transition: box-shadow 0.4s ease;
         }
-        .poster-wrapper:hover .poster-img-container {
+        .poster-wrapper:hover .poster-img-container,
+        .poster-wrapper:active .poster-img-container {
           transform: scale(1.15);
         }
-        .poster-wrapper:hover .poster-img-container img {
+        .poster-wrapper:hover .poster-img-container img,
+        .poster-wrapper:active .poster-img-container img {
           box-shadow: 0 20px 40px rgba(37,99,235,0.4);
         }
         .poster-overlay {
@@ -114,8 +116,10 @@ const OrganizationPage = {
           background: rgba(37,99,235,0.0);
           transition: background 0.3s;
           border-radius: 0.75rem;
+          pointer-events: none;
         }
-        .poster-wrapper:hover .poster-overlay {
+        .poster-wrapper:hover .poster-overlay,
+        .poster-wrapper:active .poster-overlay {
           background: rgba(37,99,235,0.2);
         }
         
@@ -133,7 +137,8 @@ const OrganizationPage = {
           z-index: 20;
           cursor: zoom-in;
         }
-        .poster-wrapper:hover .floating-photo {
+        .poster-wrapper:hover .floating-photo,
+        .poster-wrapper:active .floating-photo {
           opacity: 1;
           visibility: visible;
         }
@@ -141,6 +146,7 @@ const OrganizationPage = {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          pointer-events: none;
         }
         .floating-photo:hover {
           z-index: 30 !important;
@@ -150,16 +156,35 @@ const OrganizationPage = {
 
         /* Fotoğrafların animasyon başlangıç ve bitiş noktaları */
         .poster-wrapper .p-tl { top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.2) rotate(-20deg); }
-        .poster-wrapper:hover .p-tl { top: -15%; left: -35%; transform: translate(0, 0) scale(1) rotate(-8deg); }
+        .poster-wrapper:hover .p-tl, .poster-wrapper:active .p-tl { top: -15%; left: -35%; transform: translate(0, 0) scale(1) rotate(-8deg); }
 
         .poster-wrapper .p-tr { top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.2) rotate(20deg); }
-        .poster-wrapper:hover .p-tr { top: -15%; right: -35%; left: auto; transform: translate(0, 0) scale(1) rotate(10deg); }
+        .poster-wrapper:hover .p-tr, .poster-wrapper:active .p-tr { top: -15%; right: -35%; left: auto; transform: translate(0, 0) scale(1) rotate(10deg); }
 
         .poster-wrapper .p-bl { top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.2) rotate(-20deg); }
-        .poster-wrapper:hover .p-bl { bottom: -15%; left: -35%; top: auto; transform: translate(0, 0) scale(1) rotate(6deg); }
+        .poster-wrapper:hover .p-bl, .poster-wrapper:active .p-bl { bottom: -15%; left: -35%; top: auto; transform: translate(0, 0) scale(1) rotate(6deg); }
 
         .poster-wrapper .p-br { top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.2) rotate(20deg); }
-        .poster-wrapper:hover .p-br { bottom: -15%; right: -35%; top: auto; left: auto; transform: translate(0, 0) scale(1) rotate(-6deg); }
+        .poster-wrapper:hover .p-br, .poster-wrapper:active .p-br { bottom: -15%; right: -35%; top: auto; left: auto; transform: translate(0, 0) scale(1) rotate(-6deg); }
+
+        /* MOBİL UYUMLULUK DÜZELTMESİ */
+        @media (max-width: 768px) {
+          .poster-group {
+            flex-direction: column;
+            gap: 5rem;
+            padding: 2rem 0;
+          }
+          .poster-wrapper {
+            width: 75%;
+            flex: none;
+            max-width: 350px;
+            margin: 0 auto;
+          }
+          .poster-wrapper:hover .p-tl, .poster-wrapper:active .p-tl { top: -10%; left: -15%; }
+          .poster-wrapper:hover .p-tr, .poster-wrapper:active .p-tr { top: -10%; right: -15%; }
+          .poster-wrapper:hover .p-bl, .poster-wrapper:active .p-bl { bottom: -10%; left: -15%; }
+          .poster-wrapper:hover .p-br, .poster-wrapper:active .p-br { bottom: -10%; right: -15%; }
+        }
       </style>
 
       <div id="org-section-2" style="width:100%;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-start;padding:3rem 0 3rem;background:#fff;overflow:hidden;">
@@ -265,7 +290,5 @@ const OrganizationPage = {
       </div>`;
   },
 
-  afterRender() {
-    // Lightbox için onclick fonksiyonu doğrudan HTML içine eklendiğinden burada ekstra binding gerekmiyor.
-  }
+  afterRender() {}
 };
