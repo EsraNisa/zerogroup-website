@@ -159,6 +159,7 @@ const HomePage = {
   },
 
   /* ---- Contact ---- */
+
   renderContact() {
     const c = DATA.contact;
     return `
@@ -189,10 +190,10 @@ const HomePage = {
             </div>
           </div>
 
-          <div style="flex:1;min-width:280px;height:500px;background:#ffffff;border-radius:1.5rem;overflow:hidden;border:1px solid #1f2937;position:relative">
+          <div style="flex:1;width:100%;min-width:280px;height:clamp(300px, 50vh, 500px);background:#ffffff;border-radius:1.5rem;overflow:hidden;border:1px solid #1f2937;position:relative" class="map-container-box">
             <iframe
               width="100%" height="100%"
-              style="border:0"
+              style="border:0; min-height: 300px;"
               loading="lazy"
               allowfullscreen
               referrerpolicy="no-referrer-when-downgrade"
