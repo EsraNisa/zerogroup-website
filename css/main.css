@@ -381,23 +381,47 @@ a:focus:not(:focus-visible) { outline: none; }
     gap: 1.5rem !important;
   }
 
-  /* ---- İletişim Formları ve Harita Yükseklikleri ---- */
-  #contact-section > div,
-  section[id$="-section-3"] > div,
-  #ik-diger > div > div {
+  /* ---- Genel Boşluk Azaltma ve Haritayı Alta Alma ---- */
+  section[id$="-section-3"], #ik-main ~ section {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 3rem 1.25rem 5rem !important; 
+  }
+  
+  #org-team {
+    min-height: 85vh !important;
+  }
+
+  /* İletişim alanlarındaki grid yapısını tek sütuna çevirip haritayı alta iter */
+  section[id$="-section-3"] > div, 
+  #contact-section > div {
     display: flex !important;
     flex-direction: column !important;
     gap: 2rem !important;
   }
-  
+
+  /* Harita kutularını mobil ekrana tam uyumlu yapar */
   div[style*="height:500px"], 
-  div[style*="height: 500px"] {
-    height: 320px !important;
+  div[style*="height: 500px"],
+  section div[style*="height:500px"] {
+    height: 300px !important;
     width: 100% !important;
     min-width: unset !important;
   }
 
+  /* ---- Telefon Kartı Çentiği (Notch) Büyütme ---- */
+  .card-notch {
+    width: 7.5rem !important;
+    height: 0.9rem !important;
+    background: #000 !important;
+    border-color: #222 !important;
+  }
+
   /* ---- Home Sayfası Spesifik ---- */
+  #about-section > div {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
   #about-section { padding: 4rem 1.25rem 6rem !important; }
   #about-section .founder-card,
   #about-section > div > div:last-child { padding: 1.5rem !important; }
@@ -427,7 +451,7 @@ a:focus:not(:focus-visible) { outline: none; }
     display: inline-block !important;
   }
   .ik-cat-label { font-size: 1.5rem !important; }
-  .ik-cat-sub { display: none !important; } /* Mobilde alt başlığı gizle (yer tasarrufu) */
+  .ik-cat-sub { display: none !important; } 
 
   /* ---- Temizlik Sayfası Spesifik ---- */
   #temizlik-section-2 { flex-direction: column !important; }

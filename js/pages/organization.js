@@ -5,12 +5,12 @@
 
 const OrganizationPage = {
 
-  /* ---- Polaroid / Ekip bölümü ---- */
+/* ---- Polaroid / Ekip bölümü ---- */
   renderTeam() {
     const pol  = DATA.polaroids;
     const pol2 = [...pol, ...pol];
 
-   const row = (items) => items.map((src) => {
+    const row = (items) => items.map((src) => {
       const randomRotate = (Math.random() * 6 - 3).toFixed(1);
       return `<div style="flex-shrink:0;margin-right:1.5rem;width:15rem;height:12rem;background:#fff;padding:0.5rem 0.5rem 2.5rem;box-shadow:0 4px 24px rgba(0,0,0,0.3);transform:rotate(${randomRotate}deg)">
         <img src="${src}" loading="lazy" alt="Ekip" style="width:100%;height:100%;object-fit:cover;border:1px solid #f3f4f6" />
@@ -20,14 +20,14 @@ const OrganizationPage = {
     return `
       <section id="org-team" style="width:100%;height:100vh;background:#000;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden" aria-label="Ekibimiz">
         <div style="position:absolute;inset:0;z-index:0;display:flex;flex-direction:column;justify-content:center;gap:2rem;opacity:0.6;pointer-events:none" aria-hidden="true">
-        <div class="animate-scroll" style="display:flex;width:max-content">${row(pol2)}</div>
+          <div class="animate-scroll" style="display:flex;width:max-content">${row(pol2)}</div>
           <div class="animate-scroll-reverse" style="display:flex;width:max-content">${row([...pol2].reverse())}</div>
           <div class="animate-scroll" style="display:flex;width:max-content">${row(pol2)}</div>
         </div>
         <div style="position:absolute;inset:0;background:rgba(0,0,0,0.3);z-index:1" aria-hidden="true"></div>
 
-        <div style="position:relative;z-index:10;max-width:48rem;margin:0 1rem">
-          <div style="background:rgba(255,255,255,0.1);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.2);padding:4rem;border-radius:2.5rem;text-align:center;box-shadow:0 16px 64px rgba(0,0,0,0.5)">
+        <div style="position:relative;z-index:10;max-width:48rem;margin:0 1rem;width:100%;">
+          <div style="background:rgba(255,255,255,0.1);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.2);padding:4rem 2rem;border-radius:2.5rem;text-align:center;box-shadow:0 16px 64px rgba(0,0,0,0.5)">
             <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(2rem,5vw,4rem);font-weight:900;text-transform:uppercase;letter-spacing:-0.03em;color:#fff;margin:0 0 1.5rem">EKİBİMİZ</h2>
             <div style="width:6rem;height:4px;background:#fff;margin:0 auto 2rem;box-shadow:0 2px 8px rgba(255,255,255,0.3)"></div>
             <p style="color:rgba(255,255,255,0.9);font-size:1.1rem;line-height:1.7;margin:0">
@@ -81,9 +81,7 @@ const OrganizationPage = {
           cursor: pointer;
           z-index: 1;
         }
-        .poster-wrapper:hover, .poster-wrapper:active {
-          z-index: 10;
-        }
+        .poster-wrapper:hover, .poster-wrapper:active { z-index: 10; }
         .poster-img-container {
           width: 100%;
           padding-bottom: 144%;
@@ -102,14 +100,8 @@ const OrganizationPage = {
           box-shadow: 0 4px 16px rgba(0,0,0,0.4);
           transition: box-shadow 0.4s ease;
         }
-        .poster-wrapper:hover .poster-img-container,
-        .poster-wrapper:active .poster-img-container {
-          transform: scale(1.15);
-        }
-        .poster-wrapper:hover .poster-img-container img,
-        .poster-wrapper:active .poster-img-container img {
-          box-shadow: 0 20px 40px rgba(37,99,235,0.4);
-        }
+        .poster-wrapper:hover .poster-img-container { transform: scale(1.15); }
+        .poster-wrapper:hover .poster-img-container img { box-shadow: 0 20px 40px rgba(37,99,235,0.4); }
         .poster-overlay {
           position: absolute;
           inset: 0;
@@ -118,12 +110,8 @@ const OrganizationPage = {
           border-radius: 0.75rem;
           pointer-events: none;
         }
-        .poster-wrapper:hover .poster-overlay,
-        .poster-wrapper:active .poster-overlay {
-          background: rgba(37,99,235,0.2);
-        }
+        .poster-wrapper:hover .poster-overlay { background: rgba(37,99,235,0.2); }
         
-        /* Etrafında açılan fotoğraflar */
         .floating-photo {
           position: absolute;
           width: 9rem;
@@ -137,57 +125,39 @@ const OrganizationPage = {
           z-index: 20;
           cursor: zoom-in;
         }
-        .poster-wrapper:hover .floating-photo,
-        .poster-wrapper:active .floating-photo {
-          opacity: 1;
-          visibility: visible;
-        }
-        .floating-photo img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          pointer-events: none;
-        }
-        .floating-photo:hover {
-          z-index: 30 !important;
-          transform: scale(1.1) !important;
-          box-shadow: 0 12px 32px rgba(0,0,0,0.6);
-        }
+        .poster-wrapper:hover .floating-photo { opacity: 1; visibility: visible; }
+        .floating-photo img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
 
-        /* Fotoğrafların animasyon başlangıç ve bitiş noktaları */
         .poster-wrapper .p-tl { top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.2) rotate(-20deg); }
-        .poster-wrapper:hover .p-tl, .poster-wrapper:active .p-tl { top: -15%; left: -35%; transform: translate(0, 0) scale(1) rotate(-8deg); }
-
+        .poster-wrapper:hover .p-tl { top: -15%; left: -35%; transform: translate(0, 0) scale(1) rotate(-8deg); }
         .poster-wrapper .p-tr { top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.2) rotate(20deg); }
-        .poster-wrapper:hover .p-tr, .poster-wrapper:active .p-tr { top: -15%; right: -35%; left: auto; transform: translate(0, 0) scale(1) rotate(10deg); }
-
+        .poster-wrapper:hover .p-tr { top: -15%; right: -35%; left: auto; transform: translate(0, 0) scale(1) rotate(10deg); }
         .poster-wrapper .p-bl { top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.2) rotate(-20deg); }
-        .poster-wrapper:hover .p-bl, .poster-wrapper:active .p-bl { bottom: -15%; left: -35%; top: auto; transform: translate(0, 0) scale(1) rotate(6deg); }
-
+        .poster-wrapper:hover .p-bl { bottom: -15%; left: -35%; top: auto; transform: translate(0, 0) scale(1) rotate(6deg); }
         .poster-wrapper .p-br { top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.2) rotate(20deg); }
-        .poster-wrapper:hover .p-br, .poster-wrapper:active .p-br { bottom: -15%; right: -35%; top: auto; left: auto; transform: translate(0, 0) scale(1) rotate(-6deg); }
+        .poster-wrapper:hover .p-br { bottom: -15%; right: -35%; top: auto; left: auto; transform: translate(0, 0) scale(1) rotate(-6deg); }
 
-        /* MOBİL UYUMLULUK DÜZELTMESİ */
+        /* MOBİL AFİŞLER ALT ALTA */
         @media (max-width: 768px) {
           .poster-group {
-            flex-direction: column;
-            gap: 5rem;
-            padding: 2rem 0;
+            flex-direction: column !important;
+            gap: 6rem !important;
+            padding: 2rem 0 !important;
           }
           .poster-wrapper {
-            width: 75%;
-            flex: none;
-            max-width: 350px;
-            margin: 0 auto;
+            width: 80% !important;
+            flex: none !important;
+            max-width: 290px !important;
+            margin: 0 auto !important;
           }
-          .poster-wrapper:hover .p-tl, .poster-wrapper:active .p-tl { top: -10%; left: -15%; }
-          .poster-wrapper:hover .p-tr, .poster-wrapper:active .p-tr { top: -10%; right: -15%; }
-          .poster-wrapper:hover .p-bl, .poster-wrapper:active .p-bl { bottom: -10%; left: -15%; }
-          .poster-wrapper:hover .p-br, .poster-wrapper:active .p-br { bottom: -10%; right: -15%; }
+          .poster-wrapper:hover .p-tl, .poster-wrapper:active .p-tl { top: -12%; left: -18%; }
+          .poster-wrapper:hover .p-tr, .poster-wrapper:active .p-tr { top: -12%; right: -18%; }
+          .poster-wrapper:hover .p-bl, .poster-wrapper:active .p-bl { bottom: -12%; left: -18%; }
+          .poster-wrapper:hover .p-br, .poster-wrapper:active .p-br { bottom: -12%; right: -18%; }
         }
       </style>
 
-      <div id="org-section-2" style="width:100%;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-start;padding:3rem 0 3rem;background:#fff;overflow:hidden;">
+      <div id="org-section-2" style="width:100%;background:#fff;overflow:hidden;">
         <div style="max-width:80rem;margin:0 auto;padding:0 1.5rem;width:100%">
           <h2 style="font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:700;margin-bottom:1rem;text-transform:uppercase;letter-spacing:0.05em">Daha Önceki Çalışmalarımız</h2>
           <div style="width:6rem;height:4px;background:#2563eb;margin-bottom:2rem"></div>
@@ -219,7 +189,7 @@ const OrganizationPage = {
 
           <div class="org-card animate-float" style="width:min(320px,90vw);background:#0a0a0a;border-radius:0.75rem;border:1px solid #1f2937;overflow:hidden;box-shadow:0 0 30px rgba(0,0,0,0.8);transition:box-shadow 0.3s,border-color 0.3s" onmouseover="this.style.boxShadow='0 0 40px rgba(139,92,246,0.3)';this.style.borderColor='rgba(139,92,246,0.5)'" onmouseout="this.style.boxShadow='0 0 30px rgba(0,0,0,0.8)';this.style.borderColor='#1f2937'">
             <div style="height:0.75rem;background:linear-gradient(90deg,#7c3aed,#2563eb)"></div>
-            <div style="width:5rem;height:0.75rem;background:#050505;border-radius:999px;margin:1rem auto;border:1px solid #1f2937"></div>
+            <div class="card-notch" style="width:5rem;height:0.75rem;background:#050505;border-radius:999px;margin:1rem auto;border:1px solid #1f2937"></div>
             <div style="padding:2rem;text-align:center;position:relative">
               <h2 id="org-contact-heading" style="font-size:4.5rem;font-weight:900;font-style:italic;letter-spacing:-0.05em;line-height:0.85;margin:2rem 0 0.5rem;color:#fff">ZERO</h2>
               <h2 style="font-size:4.5rem;font-weight:900;font-style:italic;letter-spacing:-0.05em;line-height:0.85;margin:0 0 2rem;background:linear-gradient(135deg,#a78bfa,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent">TEAM</h2>
@@ -231,7 +201,7 @@ const OrganizationPage = {
 
           <div class="org-card animate-float-delay" style="width:min(320px,90vw);background:#0a0a0a;border-radius:0.75rem;border:1px solid #1f2937;overflow:hidden;box-shadow:0 0 30px rgba(0,0,0,0.8);transition:box-shadow 0.3s,border-color 0.3s" onmouseover="this.style.boxShadow='0 0 40px rgba(34,197,94,0.3)';this.style.borderColor='rgba(34,197,94,0.5)'" onmouseout="this.style.boxShadow='0 0 30px rgba(0,0,0,0.8)';this.style.borderColor='#1f2937'">
             <div style="height:0.75rem;background:linear-gradient(90deg,#16a34a,#065f46)"></div>
-            <div style="width:5rem;height:0.75rem;background:#050505;border-radius:999px;margin:1rem auto;border:1px solid #1f2937"></div>
+            <div class="card-notch" style="width:5rem;height:0.75rem;background:#050505;border-radius:999px;margin:1rem auto;border:1px solid #1f2937"></div>
             <div style="padding:2rem;text-align:center">
               <h2 style="font-size:3rem;font-weight:900;text-transform:uppercase;letter-spacing:-0.03em;color:#fff;margin:0 0 0.25rem">JOIN US</h2>
               <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.4em;color:#22c55e;background:rgba(34,197,94,0.1);padding:0.25rem 0.5rem;border-radius:0.25rem;display:inline-block;margin-bottom:2.5rem">CONNECT</span>
@@ -258,7 +228,7 @@ const OrganizationPage = {
         </div>
       </section>`;
   },
-
+  
   openLightbox(src) {
     const lb  = document.getElementById('lightbox');
     const img = document.getElementById('lightbox-img');

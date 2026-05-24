@@ -149,7 +149,7 @@ const TemizlikPage = {
           <div style="position:absolute;top:-5%;left:-5%;width:35%;height:35%;background:rgba(127,29,29,0.15);border-radius:50%;filter:blur(100px)"></div>
           <div style="position:absolute;bottom:-5%;right:-5%;width:35%;height:35%;background:rgba(29,78,216,0.15);border-radius:50%;filter:blur(100px)"></div>
         </div>
-        <div style="width:100%;max-width:80rem;position:relative;z-index:10;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
+        <div style="width:100%;max-width:80rem;position:relative;z-index:10;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center" class="contact-grid-wrapper">
           <div>
             <span style="color:#ef4444;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:1rem;text-transform:uppercase">İletişim</span>
             <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(3rem,6vw,5rem);font-weight:900;letter-spacing:-0.03em;line-height:1;margin:0 0 1.5rem">
@@ -157,8 +157,8 @@ const TemizlikPage = {
             </h2>
             <div style="width:6rem;height:4px;background:#dc2626;margin-bottom:2rem"></div>
             <div style="display:flex;flex-direction:column;gap:1.5rem;margin-bottom:2rem">
-              <a href="tel:+905312639814" style="display:flex;align-items:center;gap:1rem;text-decoration:none;color:inherit;group">
-                <div style="width:3rem;height:3rem;border-radius:50%;border:1px solid #374151;display:flex;align-items:center;justify-content:center;transition:background 0.2s,border-color 0.2s" onmouseover="this.style.background='#dc2626';this.style.borderColor='#dc2626'" onmouseout="this.style.background='';this.style.borderColor='#374151'"><i class="fa-solid fa-phone text-sm"></i></div>
+              <a href="tel:+905312639814" style="display:flex;align-items:center;gap:1rem;text-decoration:none;color:inherit">
+                <div style="width:3rem;height:3rem;border-radius:50%;border:1px solid #374151;display:flex;align-items:center;justify-content:center;transition:background 0.2s" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background=''"><i class="fa-solid fa-phone text-sm"></i></div>
                 <div>
                   <span style="font-size:0.65rem;color:#6b7280;font-family:monospace;text-transform:uppercase;display:block">GSM</span>
                   <span style="font-size:1.2rem;font-weight:700">${c.tel3}</span>
@@ -180,12 +180,12 @@ const TemizlikPage = {
               </div>
             </div>
             <div style="display:flex;flex-wrap:wrap;gap:1rem">
-              <button onclick="Utils.openLink('${c.whatsapp}')" style="padding:1rem 2rem;background:#16a34a;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.05em;border:none;border-radius:999px;transition:background 0.2s;display:flex;align-items:center;gap:0.5rem;box-shadow:0 4px 16px rgba(22,163,74,0.3)" onmouseover="this.style.background='#15803d'" onmouseout="this.style.background='#16a34a'">
+              <button onclick="Utils.openLink('${c.whatsapp}')" style="padding:1rem 2rem;background:#16a34a;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.05em;border:none;border-radius:999px;transition:background 0.2s;display:flex;align-items:center;gap:0.5rem;box-shadow:0 4px 166px rgba(22,163,74,0.3)">
                 <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
               </button>
             </div>
           </div>
-          <div style="height:500px;border-radius:1.5rem;overflow:hidden;border:1px solid #1f2937;position:relative">
+          <div style="height:500px;border-radius:1.5rem;overflow:hidden;border:1px solid #1f2937;position:relative" class="map-container-box">
             <iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Zero Group Ofis" src="${c.mapsEmbed}"></iframe>
             <div style="position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);padding:1.25rem;border-radius:0.75rem;border:1px solid #e5e7eb;box-shadow:0 8px 32px rgba(0,0,0,0.3)">
               <h4 style="font-family:'Montserrat',sans-serif;color:#111;font-weight:700;margin:0 0 0.25rem">Zero Group — Temizlik Hizmetleri</h4>
