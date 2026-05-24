@@ -1,8 +1,8 @@
-\# ZeroGroup Website
+# ZeroGroup Website
 
 
 
-\## 📌 Proje Hakkında
+## 📌 Proje Hakkında
 
 
 
@@ -12,93 +12,78 @@ Bu proje, ZeroGroup şirketi için geliştirilmiş kurumsal web sitesidir.
 
 
 
-\---
+---
 
 
 
-\## 🚀 Özellikler
+## 🚀 Özellikler
 
 
 
-\* Ana sayfa
+* Ana sayfa
 
-\* İnsan Kaynakları (IK)
+* İnsan Kaynakları (IK)
 
-\* Lojistik hizmetleri
+* Lojistik hizmetleri
 
-\* Organizasyon hizmetleri
+* Organizasyon hizmetleri
 
-\* Temizlik hizmetleri
-
-
-
-\---
+* Temizlik hizmetleri
 
 
 
-\## 🛠️ Kullanılan Teknolojiler
+---
 
 
 
-\* HTML5
-
-\* CSS3
-
-\* JavaScript (Vanilla JS)
+## 🛠️ Kullanılan Teknolojiler
 
 
 
-\---
+* HTML5
+
+* CSS3
+
+* JavaScript (Vanilla JS)
 
 
 
-\## 📁 Proje Yapısı
+---
+
+
+
+## 📁 Proje Yapısı
 
 
 
 ```
 
 file/
-
-&#x20;├── css/
-
-&#x20;│    └── main.css
-
-&#x20;├── gorseller/
-
-&#x20;├── js/
-
-&#x20;│    ├── pages/
-
-&#x20;│    │    ├── home.js
-
-&#x20;│    │    ├── ik.js
-
-&#x20;│    │    ├── lojistik.js
-
-&#x20;│    │    ├── organization.js
-
-&#x20;│    │    └── temizlik.js
-
-&#x20;│    ├── app.js
-
-&#x20;│    ├── components.js
-
-&#x20;│    ├── data.js
-
-&#x20;│    └── utils.js
-
-&#x20;├── index.html
+├── css/
+│    └── main.css
+├── gorseller/
+├── js/
+│    ├── pages/
+│    │    ├── home.js
+│    │    ├── ik.js
+│    │    ├── lojistik.js
+│    │    ├── organization.js
+│    │    └── temizlik.js
+│    ├── app.js
+│    ├── components.js
+│    ├── data.js
+│    └── utils.js
+├── index.html
 
 ```
 
 
 
-\---
+---
 
 
 
-\## ⚙️ Kurulum ve Çalıştırma
+## ⚙️ Kurulum ve Çalıştırma
 
 
 
@@ -106,7 +91,7 @@ Projeyi çalıştırmak için:
 
 
 
-1\. Bu repository'yi indir:
+1. Bu repository'yi indir:
 
 
 
@@ -118,7 +103,7 @@ git clone https://github.com/EsraNisa/zerogroup-website.git
 
 
 
-2\. Klasöre gir:
+2. Klasöre gir:
 
 
 
@@ -130,37 +115,37 @@ cd zerogroup-website
 
 
 
-3\. `index.html` dosyasını tarayıcıda aç
+3. `index.html` dosyasını tarayıcıda aç
 
 
 
-\---
+---
 
 
 
 
 
-\## 📌 Notlar
+## 📌 Notlar
 
 
 
-\* Proje frontend tabanlıdır
+* Proje frontend tabanlıdır
 
-\* Backend bağlantısı yoktur 
-
-
-
-\---
+* Backend bağlantısı yoktur 
 
 
 
-\## 👤 Geliştirici
+---
 
 
 
-\* Esra Nisa Ahlatcık
+## 👤 Geliştirici
 
-\* GitHub: https://github.com/EsraNisa
+
+
+* Esra Nisa Ahlatcık
+
+* GitHub: https://github.com/EsraNisa
 
 
 
