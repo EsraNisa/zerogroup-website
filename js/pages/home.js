@@ -32,8 +32,8 @@ const HomePage = {
   renderAbout() {
     const img = DATA.images;
     return `
-      <section id="about-section" style="background:#000;color:#fff;padding:6rem 2rem 10rem;" aria-labelledby="about-heading">
-        <div style="max-width:80rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
+      <section id="about-section" class="section-padding" style="background:#000;color:#fff;padding-bottom:10rem;" aria-labelledby="about-heading">
+        <div class="grid-2col" style="max-width:80rem;margin:0 auto;">
           <div>
             <h2 id="about-heading" style="font-family:'Montserrat',sans-serif;font-size:clamp(3rem,8vw,6rem);font-weight:900;letter-spacing:-0.03em;line-height:1;margin-bottom:2rem;color:#aaa">
               WE ARE<br><span style="color:#9ca3af">ZERO</span>
@@ -42,7 +42,7 @@ const HomePage = {
             <p style="font-size:1.2rem;color:#d1d5db;line-height:1.8;margin-bottom:2rem">
               İnsan kaynakları alanında güçlü kadromuz ve sürekli gelişen yapımızla, sektörde güvenilir ve tercih edilen lider markalardan biri olmak; istihdam yaratan, doğru personeli doğru iş ile buluşturan ve hizmet kalitesiyle fark oluşturan öncü bir şirket haline gelmektir.
             </p>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">
+            <div class="grid-2col-small-gap">
               <div>
                 <h4 style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:#C5A059;margin:0">4 SEKTÖR</h4>
                 <p style="font-size:0.7rem;color:#9ca3af;font-family:monospace;text-transform:uppercase;letter-spacing:0.1em;margin:0.25rem 0 0">Hizmet Alanı</p>
@@ -134,14 +134,14 @@ const HomePage = {
               </h2>
               <div style="width:6rem;height:4px;background:#C5A059;margin:1.5rem auto 0"></div>
             </div>
-            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2rem" class="stats-grid">
+            <div class="grid-stats stats-grid">
               ${statCards}
             </div>
           </div>
         </div>
 
         <!-- Yorumlar -->
-        <div id="testimonials-section" style="background:#f9fafb;padding:6rem 2rem">
+        <div id="testimonials-section" class="section-padding" style="background:#f9fafb;">
           <div style="max-width:80rem;margin:0 auto">
             <div style="margin-bottom:4rem">
               <span style="color:#C5A059;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:0.75rem">MÜŞTERİ GÖRÜŞLERİ</span>
@@ -150,7 +150,7 @@ const HomePage = {
                 <span style="font-style:italic;font-weight:300;color:#9ca3af">Ne Diyor?</span>
               </h2>
             </div>
-            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:2rem">
+            <div class="grid-autofill-380">
               ${testimonials}
             </div>
           </div>
@@ -163,9 +163,9 @@ const HomePage = {
   renderContact() {
     const c = DATA.contact;
     return `
-      <section id="contact-section" style="background:#080808;color:#fff;padding:6rem 2rem;border-top:1px solid #111">
-        <div style="max-width:80rem;margin:0 auto;display:flex;flex-wrap:wrap;gap:4rem">
-          <div style="flex:1;min-width:280px;display:flex;flex-direction:column;justify-content:space-between;gap:2rem">
+      <section id="contact-section" class="section-padding" style="background:#080808;color:#fff;border-top:1px solid #111">
+        <div style="max-width:80rem;margin:0 auto;" class="grid-2col">
+          <div style="display:flex;flex-direction:column;justify-content:space-between;gap:2rem">
             <div>
               <span style="color:#C5A059;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:1rem">CONTACT</span>
               <h2 style="font-family:'Montserrat',sans-serif;font-style:italic;font-size:clamp(2rem,5vw,3.5rem);margin:0 0 3rem">Let's talk.</h2>
@@ -190,7 +190,7 @@ const HomePage = {
             </div>
           </div>
 
-          <div style="flex:1;width:100%;min-width:280px;height:clamp(300px, 50vh, 500px);background:#ffffff;border-radius:1.5rem;overflow:hidden;border:1px solid #1f2937;position:relative" class="map-container-box">
+          <div class="map-box map-container-box" style="background:#ffffff;">
             <iframe
               width="100%" height="100%"
               style="border:0; min-height: 300px;"
@@ -231,12 +231,4 @@ const HomePage = {
   }
 };
 
-/* CSS fix: stats grid 4 columns on larger screens */
-(function addResponsiveStats() {
-  const style = document.createElement('style');
-  style.textContent = `
-    @media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4,1fr) !important; } }
-    @media (max-width: 768px) { #about-section > div { grid-template-columns: 1fr !important; } }
-  `;
-  document.head.appendChild(style);
-})();
+// Responsive grid classes defined in main.css

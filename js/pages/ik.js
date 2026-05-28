@@ -82,15 +82,15 @@ selectCategory(idx) {
     if (desc) desc.textContent = cat.desc;
 },
 
-renderContact() {
+  renderContact() {
     const c = DATA.contact;
     return `
-      <section id="ik-section-3" style="width:100%;min-height:100vh;background:#080808;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6rem 2rem 8rem;position:relative;overflow:hidden">
+      <section id="ik-section-3" class="section-padding" style="width:100%;min-height:100vh;background:#080808;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden">
         <div style="position:absolute;inset:0;pointer-events:none" aria-hidden="true">
           <div style="position:absolute;top:-5%;left:-5%;width:35%;height:35%;background:rgba(127,29,29,0.15);border-radius:50%;filter:blur(100px)"></div>
           <div style="position:absolute;bottom:-5%;right:-5%;width:35%;height:35%;background:rgba(29,78,216,0.15);border-radius:50%;filter:blur(100px)"></div>
         </div>
-        <div style="width:100%;max-width:80rem;position:relative;z-index:10;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center" class="contact-grid-wrapper">
+        <div style="width:100%;max-width:80rem;position:relative;z-index:10;" class="grid-2col contact-grid-wrapper">
           <div>
             <span style="color:#ef4444;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:1rem;text-transform:uppercase">İletişim</span>
             <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(3rem,6vw,5rem);font-weight:900;letter-spacing:-0.03em;line-height:1;margin:0 0 1.5rem">
@@ -126,7 +126,7 @@ renderContact() {
               </button>
             </div>
           </div>
-          <div style="height:500px;border-radius:1.5rem;overflow:hidden;border:1px solid #1f2937;position:relative" class="map-container-box">
+          <div class="map-box map-container-box">
             <iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Zero Group Ofis" src="${c.mapsEmbed}"></iframe>
             <div style="position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);padding:1.25rem;border-radius:0.75rem;border:1px solid #e5e7eb;box-shadow:0 8px 32px rgba(0,0,0,0.3)">
               <h4 style="font-family:'Montserrat',sans-serif;color:#111;font-weight:700;margin:0 0 0.25rem">Zero Group — İnsan Kaynakları</h4>
@@ -155,10 +155,3 @@ renderContact() {
     this.selectCategory(0);
   }
 };
-
-/* Responsive fix for IK contact grid */
-(function() {
-  const s = document.createElement('style');
-  s.textContent = `@media (max-width:768px) { #ik-section-3 > div { grid-template-columns:1fr !important; } }`;
-  document.head.appendChild(s);
-})();

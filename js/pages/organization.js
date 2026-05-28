@@ -38,7 +38,7 @@ const OrganizationPage = {
       </section>`;
   },
 
-  /* ---- Poster + Albüm ---- */
+/* ---- Poster + Albüm ---- */
   renderProjects() {
     const posters = DATA.posters.slice(0, 5);
     const events  = DATA.eventPhotos;
@@ -157,7 +157,7 @@ const OrganizationPage = {
         }
       </style>
 
-      <div id="org-section-2" style="width:100%;background:#fff;overflow:hidden;">
+      <div id="org-section-2" style="width:100%;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:6rem 0;background:#fff;overflow:hidden;">
         <div style="max-width:80rem;margin:0 auto;padding:0 1.5rem;width:100%">
           <h2 style="font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:700;margin-bottom:1rem;text-transform:uppercase;letter-spacing:0.05em">Daha Önceki Çalışmalarımız</h2>
           <div style="width:6rem;height:4px;background:#2563eb;margin-bottom:2rem"></div>
@@ -185,7 +185,7 @@ const OrganizationPage = {
           <div style="position:absolute;top:-10%;left:-10%;width:40%;height:40%;background:rgba(88,28,135,0.2);border-radius:50%;filter:blur(120px)"></div>
           <div style="position:absolute;bottom:-10%;right:-10%;width:40%;height:40%;background:rgba(20,83,45,0.2);border-radius:50%;filter:blur(120px)"></div>
         </div>
-        <div style="display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-start;justify-content:center;width:100%;max-width:72rem;padding-top:2.5rem;position:relative;z-index:10">
+        <div class="org-cards-container">
 
           <div class="org-card animate-float" style="width:min(320px,90vw);background:#0a0a0a;border-radius:0.75rem;border:1px solid #1f2937;overflow:hidden;box-shadow:0 0 30px rgba(0,0,0,0.8);transition:box-shadow 0.3s,border-color 0.3s" onmouseover="this.style.boxShadow='0 0 40px rgba(139,92,246,0.3)';this.style.borderColor='rgba(139,92,246,0.5)'" onmouseout="this.style.boxShadow='0 0 30px rgba(0,0,0,0.8)';this.style.borderColor='#1f2937'">
             <div style="height:0.75rem;background:linear-gradient(90deg,#7c3aed,#2563eb)"></div>
@@ -228,7 +228,7 @@ const OrganizationPage = {
         </div>
       </section>`;
   },
-  
+
   openLightbox(src) {
     const lb  = document.getElementById('lightbox');
     const img = document.getElementById('lightbox-img');

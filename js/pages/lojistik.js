@@ -20,9 +20,9 @@ const LojistikPage = {
       </div>`).join('');
 
     return `
-      <section id="lojistik-section-2" style="width:100%;background:#f9fafb;padding:6rem 2rem 8rem">
+      <section id="lojistik-section-2" class="section-padding" style="width:100%;background:#f9fafb;padding-bottom:8rem;">
         <div style="max-width:64rem;margin:0 auto">
-          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:2rem">
+          <div class="grid-autofill-400">
             ${cards}
           </div>
         </div>
@@ -33,14 +33,14 @@ const LojistikPage = {
     const c   = DATA.contact;
     const img = DATA.images;
     return `
-      <section id="lojistik-section-3" style="min-height:100vh;width:100%;background:#0a0a0a;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:6rem 1.5rem 8rem;position:relative;overflow:hidden">
+      <section id="lojistik-section-3" class="section-padding" style="min-height:100vh;width:100%;background:#0a0a0a;display:flex;flex-direction:column;justify-content:center;align-items:center;padding-bottom:8rem;position:relative;overflow:hidden">
         <div style="position:absolute;inset:0;z-index:0;pointer-events:none" aria-hidden="true">
           <img src="${img.LOJ_CONTACT_BG}" alt="" style="width:100%;height:100%;object-fit:cover;opacity:0.2;filter:grayscale(1)" loading="lazy" />
         </div>
 
         <div style="position:relative;z-index:10;width:100%;max-width:36rem;animation:float 6s ease-in-out infinite">
           <!-- Kağıt efekti kart -->
-          <div class="paper-texture" style="transform:rotate(-2deg);padding:3rem;box-shadow:0 16px 64px rgba(0,0,0,0.6),8px 8px 0 rgba(0,0,0,0.1);border-bottom:8px solid rgba(0,0,0,0.08);border-right:8px solid rgba(0,0,0,0.08);position:relative">
+          <div class="paper-texture-card">
 
             <div style="display:flex;justify-content:space-between;align-items:flex-start;border-bottom:4px solid #000;padding-bottom:1rem;margin-bottom:1.5rem">
               <div>

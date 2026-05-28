@@ -191,7 +191,7 @@ nav ul li button:hover, nav ul li a:hover { color: #3b82f6; }
 
 .bottom-nav-inner {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 0.25rem;
   border-radius: 9999px;
@@ -200,6 +200,13 @@ nav ul li button:hover, nav ul li a:hover { color: #3b82f6; }
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255,255,255,0.1);
   transition: background 0.5s, border 0.5s;
+  overflow-x: auto;
+  max-width: 95vw;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.bottom-nav-inner::-webkit-scrollbar {
+  display: none;
 }
 .bottom-nav-inner.light {
   background: rgba(255, 255, 255, 0.9) !important;
@@ -340,6 +347,87 @@ a:focus:not(:focus-visible) { outline: none; }
   z-index: 1;
 }
 
+/* ---- Layout & Responsive Grid Utilities ---- */
+.section-padding {
+  padding: 6rem 2rem;
+}
+
+.map-box {
+  width: 100%;
+  height: 500px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 1px solid #1f2937;
+  position: relative;
+}
+
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.grid-2col-small-gap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.grid-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.grid-autofill-340 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+.grid-autofill-380 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 2rem;
+}
+
+.grid-autofill-400 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.paper-texture-card {
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  background-color: #fdfdfd;
+  transform: rotate(-2deg);
+  padding: 3rem;
+  box-shadow: 0 16px 64px rgba(0,0,0,0.6), 8px 8px 0 rgba(0,0,0,0.1);
+  border-bottom: 8px solid rgba(0,0,0,0.08);
+  border-right: 8px solid rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.org-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 72rem;
+  padding-top: 2.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .grid-stats {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
 /* ============================================================
    WEB (Desktop) — Özel Düzeltmeler (Organizasyon afişleri vs.)
    ============================================================ */
@@ -369,16 +457,34 @@ a:focus:not(:focus-visible) { outline: none; }
   .hero-title { font-size: clamp(3.5rem, 20vw, 6rem) !important; }
   .hero-subtitle { font-size: 0.6rem !important; letter-spacing: 0.4em !important; }
 
-  /* ---- Satır içi stilleri ezen genel Grid/Flex kuralları ---- */
-  div[style*="grid-template-columns:1fr 1fr"],
-  div[style*="grid-template-columns: 1fr 1fr"],
-  div[style*="grid-template-columns:repeat(2"],
-  div[style*="grid-template-columns: repeat(2"],
-  div[style*="minmax(340px"], 
-  div[style*="minmax(380px"],
-  div[style*="minmax(400px"] {
+  /* ---- Layout & Grid Mobilde Tek Sütun ---- */
+  .grid-2col,
+  .grid-2col-small-gap,
+  .grid-stats,
+  .grid-autofill-340,
+  .grid-autofill-380,
+  .grid-autofill-400 {
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
+  }
+
+  .section-padding {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  .map-box {
+    height: 300px !important;
+    width: 100% !important;
+    min-width: unset !important;
+  }
+
+  .paper-texture-card {
+    padding: 1.5rem !important;
+    transform: none !important;
+    border-width: 4px !important;
   }
 
   /* ---- Genel Boşluk Azaltma ve Haritayı Alta Alma ---- */
@@ -400,15 +506,6 @@ a:focus:not(:focus-visible) { outline: none; }
     gap: 2rem !important;
   }
 
-  /* Harita kutularını mobil ekrana tam uyumlu yapar */
-  div[style*="height:500px"], 
-  div[style*="height: 500px"],
-  section div[style*="height:500px"] {
-    height: 300px !important;
-    width: 100% !important;
-    min-width: unset !important;
-  }
-
   /* ---- Telefon Kartı Çentiği (Notch) Büyütme ---- */
   .card-notch {
     width: 7.5rem !important;
@@ -418,16 +515,12 @@ a:focus:not(:focus-visible) { outline: none; }
   }
 
   /* ---- Home Sayfası Spesifik ---- */
-  #about-section > div {
-    grid-template-columns: 1fr !important;
-    gap: 2rem !important;
-  }
   #about-section { padding: 4rem 1.25rem 6rem !important; }
   #about-section .founder-card,
   #about-section > div > div:last-child { padding: 1.5rem !important; }
 
   /* ---- Organizasyon Spesifik ---- */
-  #org-section-3 > div > div[style*="flex-wrap:wrap"] {
+  .org-cards-container {
     flex-direction: column !important;
     align-items: center !important;
   }
@@ -463,29 +556,20 @@ a:focus:not(:focus-visible) { outline: none; }
     border-bottom: 1px solid #1f2937 !important; 
   }
 
-  /* ---- Lojistik Spesifik ---- */
-  .paper-texture { 
-    padding: 1.5rem !important; 
-    transform: none !important; 
-    border-width: 4px !important; 
-  }
-
   /* ---- Alt Bar ve Butonlar ---- */
   #floating-btns { right: 0.75rem !important; bottom: 5rem !important; }
+  .bottom-nav-inner {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    justify-content: flex-start !important;
+    padding: 0.5rem 1rem !important;
+    scrollbar-width: none !important;
+  }
   .bottom-nav-inner button { padding: 0.45rem 0.65rem !important; font-size: 0.65rem !important; }
 
   /* ---- Footer ---- */
   .footer-inner { padding: 3rem 1.5rem 1.5rem !important; }
   .footer-bg-text { font-size: 40vw !important; margin-bottom: -14vw !important; }
-
-  /* ---- Genel Padding Düzeltmesi ---- */
-  section[style*="padding:6rem 2rem"],
-  div[style*="padding:6rem 2rem"] {
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
-  }
 }
 
 /* ---- Utility colors ---- */

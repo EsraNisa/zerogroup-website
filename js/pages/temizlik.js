@@ -60,7 +60,7 @@ const TemizlikPage = {
       </div>`).join('');
 
     return `
-      <section id="temizlik-ekibimiz" style="width:100%;min-height:100vh;background:#fff;padding:6rem 2rem">
+      <section id="temizlik-ekibimiz" class="section-padding" style="width:100%;min-height:100vh;background:#fff;">
         <div style="max-width:80rem;margin:0 auto">
           <div style="margin-bottom:4rem">
             <span style="color:#dc2626;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:0.75rem;text-transform:uppercase">Temizlik Personeli</span>
@@ -73,7 +73,7 @@ const TemizlikPage = {
               Ekibimize katılmak isteyen adaylara sağladığımız avantajlar ve çalışma koşulları hakkında tüm detayları aşağıda bulabilirsiniz.
             </p>
           </div>
-          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:2rem;margin-bottom:4rem">
+          <div class="grid-autofill-340" style="margin-bottom:4rem">
             ${cards}
           </div>
           <div style="background:#000;border-radius:1.5rem;padding:3rem 3rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2rem">
@@ -113,7 +113,7 @@ const TemizlikPage = {
       </div>`).join('');
 
     return `
-      <section id="temizlik-kurumsal" style="width:100%;min-height:100vh;background:#030712;color:#fff;padding:6rem 2rem">
+      <section id="temizlik-kurumsal" class="section-padding" style="width:100%;min-height:100vh;background:#030712;color:#fff;">
         <div style="max-width:80rem;margin:0 auto">
           <div style="margin-bottom:4rem">
             <span style="color:#60a5fa;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:0.75rem;text-transform:uppercase">Kurumlar İçin</span>
@@ -125,7 +125,7 @@ const TemizlikPage = {
               Kurumunuzun temizlik ihtiyaçlarını Zero Group'a emanet etmeden önce merak ettiğiniz her şeyi bu sayfada bulabilirsiniz.
             </p>
           </div>
-          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem;margin-bottom:4rem">
+          <div class="grid-autofill-340" style="margin-bottom:4rem;gap:1.5rem !important;">
             ${cards}
           </div>
           <div style="background:#2563eb;border-radius:1.5rem;padding:3rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2rem">
@@ -141,15 +141,15 @@ const TemizlikPage = {
       </section>`;
   },
 
- renderContact() {
+  renderContact() {
     const c = DATA.contact;
     return `
-      <section id="temizlik-section-3" style="width:100%;min-height:100vh;background:#080808;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6rem 2rem 8rem;position:relative;overflow:hidden">
+      <section id="temizlik-section-3" class="section-padding" style="width:100%;min-height:100vh;background:#080808;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden">
         <div style="position:absolute;inset:0;pointer-events:none" aria-hidden="true">
           <div style="position:absolute;top:-5%;left:-5%;width:35%;height:35%;background:rgba(127,29,29,0.15);border-radius:50%;filter:blur(100px)"></div>
           <div style="position:absolute;bottom:-5%;right:-5%;width:35%;height:35%;background:rgba(29,78,216,0.15);border-radius:50%;filter:blur(100px)"></div>
         </div>
-        <div style="width:100%;max-width:80rem;position:relative;z-index:10;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center" class="contact-grid-wrapper">
+        <div style="width:100%;max-width:80rem;position:relative;z-index:10;" class="grid-2col contact-grid-wrapper">
           <div>
             <span style="color:#ef4444;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:1rem;text-transform:uppercase">İletişim</span>
             <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(3rem,6vw,5rem);font-weight:900;letter-spacing:-0.03em;line-height:1;margin:0 0 1.5rem">
@@ -185,7 +185,7 @@ const TemizlikPage = {
               </button>
             </div>
           </div>
-          <div style="height:500px;border-radius:1.5rem;overflow:hidden;border:1px solid #1f2937;position:relative" class="map-container-box">
+          <div class="map-box map-container-box">
             <iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Zero Group Ofis" src="${c.mapsEmbed}"></iframe>
             <div style="position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);padding:1.25rem;border-radius:0.75rem;border:1px solid #e5e7eb;box-shadow:0 8px 32px rgba(0,0,0,0.3)">
               <h4 style="font-family:'Montserrat',sans-serif;color:#111;font-weight:700;margin:0 0 0.25rem">Zero Group — Temizlik Hizmetleri</h4>

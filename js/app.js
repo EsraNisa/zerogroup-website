@@ -69,11 +69,37 @@ const SECTION_LABELS = {
   'lojistik-section-2': 'İŞ ALANLARIMIZ',
   'lojistik-section-3': 'İLETİŞİM',
 };
+  const HASH_VIEWS = {
+    '': 'HOME',
+    '#/': 'HOME',
+    '#/ik': 'IK',
+    '#/temizlik': 'TEMIZLIK',
+    '#/organizasyon': 'ORGANIZATION',
+    '#/lojistik': 'LOJISTIK'
+  };
+
+  const VIEW_HASHES = {
+    'HOME': '#/',
+    'IK': '#/ik',
+    'TEMIZLIK': '#/temizlik',
+    'ORGANIZATION': '#/organizasyon',
+    'LOJISTIK': '#/lojistik'
+  };
+
   function _getPageModule(view) {
     return { HOME: HomePage, ORGANIZATION: OrganizationPage, IK: IKPage, TEMIZLIK: TemizlikPage, LOJISTIK: LojistikPage }[view];
   }
 
   function navigate(view) {
+    const hash = VIEW_HASHES[view] || '#/';
+    if (window.location.hash !== hash) {
+      window.location.hash = hash;
+    } else {
+      _renderView(view);
+    }
+  }
+
+  function _renderView(view) {
     /* Cleanup carousel if leaving org page */
     if (window._orgCarouselCleanup) { window._orgCarouselCleanup(); window._orgCarouselCleanup = null; }
 
@@ -92,6 +118,12 @@ const SECTION_LABELS = {
 
     /* Force scroll event to set initial navbar color */
     setTimeout(() => window.dispatchEvent(new Event('scroll')), 50);
+  }
+
+  function _handleHashChange() {
+    const hash = window.location.hash || '#/';
+    const view = HASH_VIEWS[hash] || 'HOME';
+    _renderView(view);
   }
 
   function goHome(e) {
@@ -144,15 +176,17 @@ const SECTION_LABELS = {
   /* ---- Init ---- */
   function init() {
     // Navbar butonlarına tıklanıldığında ilgili aksiyonu çalıştırır
-document.addEventListener('click', (e) => {
-  const btn = e.target.closest('.nav-link');
-  if (btn && btn.dataset.action) {
-    // Utils.runAction içindeki tırnakları temizleyerek çalıştırır
-    const actionKey = btn.dataset.action.match(/'([^']+)'/)[1];
-    Utils.runAction(actionKey);
-  }
-});
-    navigate('HOME');
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.nav-link');
+      if (btn && btn.dataset.action) {
+        // Utils.runAction içindeki tırnakları temizleyerek çalıştırır
+        const actionKey = btn.dataset.action.match(/'([^']+)'/)[1];
+        Utils.runAction(actionKey);
+      }
+    });
+
+    window.addEventListener('hashchange', _handleHashChange);
+    _handleHashChange(); // Run on initial load
   }
 
   return { navigate, goHome, init };
