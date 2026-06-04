@@ -30,6 +30,20 @@ const DATA = {
     TEMIZLIK_BG: './gorseller/temizlik.jpg',
   },
 
+  /* Temizlik galeri resimleri (10 adet) */
+  temizlikPhotos: [
+    './gorseller/temizlik1.jpg',
+    './gorseller/temizlik2.jpg',
+    './gorseller/temizlik3.jpg',
+    './gorseller/temizlik4.jpg',
+    './gorseller/temizlik5.jpg',
+    './gorseller/temizlik6.jpg',
+    './gorseller/temizlik7.jpg',
+    './gorseller/temizlik8.jpg',
+    './gorseller/temizlik9.jpg',
+    './gorseller/temizlik10.jpg'
+  ],
+
   /* Polaroid resimleri (20 adet) */
   polaroids: Array.from({ length: 20 }, (_, i) => `./gorseller/polaroid-${i + 1}.jpg`),
 

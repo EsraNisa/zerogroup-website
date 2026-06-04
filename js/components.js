@@ -41,6 +41,7 @@ const Navbar = (() => {
     ];
     if (view === 'TEMIZLIK') return [
       { label: 'HAKKIMIZDA',  action: () => scrollTo('temizlik-main')      },
+      { label: 'GALERİ',      action: () => scrollTo('temizlik-galeri')    },
       { label: 'BİLGİ ALIN', action: () => scrollTo('temizlik-section-2') },
       { label: 'EKİP',        action: () => scrollTo('temizlik-ekibimiz')  },
       { label: 'KURUMSAL',    action: () => scrollTo('temizlik-kurumsal')  },

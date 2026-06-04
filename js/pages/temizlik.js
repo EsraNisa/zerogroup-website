@@ -196,6 +196,85 @@ const TemizlikPage = {
       </section>`;
   },
 
+  renderGaleri() {
+    const photos = DATA.temizlikPhotos || [];
+    const imageCards = photos.map((src, i) => `
+      <div class="gallery-card" onclick="TemizlikPage.openLightbox('${src}')" style="flex:0 0 clamp(280px, 30vw, 380px);position:relative;border-radius:1rem;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.06);cursor:zoom-in;aspect-ratio:4/3;transition:transform 0.4s cubic-bezier(0.25,1,0.5,1),box-shadow 0.4s ease" onmouseover="this.style.transform='translateY(-8px)';this.style.boxShadow='0 20px 40px rgba(0,0,0,0.12)';this.querySelector('img').style.transform='scale(1.08)';this.querySelector('.gallery-overlay').style.opacity='1'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 10px 30px rgba(0,0,0,0.06)';this.querySelector('img').style.transform='scale(1)';this.querySelector('.gallery-overlay').style.opacity='0'">
+        <img src="${src}" alt="Temizlik Hizmeti ${i+1}" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease" />
+        <div class="gallery-overlay" style="position:absolute;inset:0;background:rgba(220,38,38,0.2);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.4s ease;pointer-events:none">
+          <div style="width:3.5rem;height:3.5rem;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,0.2)">
+            <i class="fa-solid fa-magnifying-glass-plus" style="color:#dc2626;font-size:1.2rem"></i>
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    return `
+      <section id="temizlik-galeri" class="section-padding" style="width:100%;background:#fff;padding:6rem 0;position:relative;overflow:hidden">
+        <div style="max-width:80rem;margin:0 auto;padding:0 1.5rem">
+          <!-- Üst Başlık ve Butonlar -->
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:2rem">
+            <div style="flex:1;min-width:280px">
+              <span style="color:#dc2626;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:0.75rem;text-transform:uppercase">Hizmetlerimizden Kareler</span>
+              <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:900;letter-spacing:-0.03em;line-height:1;margin:0 0 0.5rem">
+                HİZMET<br><span style="color:#9ca3af;font-weight:300">GÖRSELLERİ</span>
+              </h2>
+              <div style="width:6rem;height:4px;background:#dc2626;margin:1.5rem 0 2rem"></div>
+              <p style="color:#4b5563;font-size:1.1rem;max-width:40rem;line-height:1.7;margin:0">
+                Zero Group Temizlik Hizmetleri olarak gerçekleştirdiğimiz profesyonel temizlik çalışmalarımızdan ve yüksek hijyen standartlarımızdan kesitler.
+              </p>
+            </div>
+            
+            <!-- Kaydırma Butonları -->
+            <div style="display:flex;gap:1rem;margin-bottom:0.5rem">
+              <button onclick="TemizlikPage.scrollGallery(-1)" aria-label="Geri" style="width:3.5rem;height:3.5rem;border-radius:50%;border:1px solid #e5e7eb;background:#fff;color:#111;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s" onmouseover="this.style.background='#dc2626';this.style.borderColor='#dc2626';this.style.color='#fff';this.style.transform='scale(1.05)'" onmouseout="this.style.background='#fff';this.style.borderColor='#e5e7eb';this.style.color='#111';this.style.transform='scale(1)'">
+                <i class="fa-solid fa-chevron-left" style="font-size:1rem"></i>
+              </button>
+              <button onclick="TemizlikPage.scrollGallery(1)" aria-label="İleri" style="width:3.5rem;height:3.5rem;border-radius:50%;border:1px solid #e5e7eb;background:#fff;color:#111;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s" onmouseover="this.style.background='#dc2626';this.style.borderColor='#dc2626';this.style.color='#fff';this.style.transform='scale(1.05)'" onmouseout="this.style.background='#fff';this.style.borderColor='#e5e7eb';this.style.color='#111';this.style.transform='scale(1)'">
+                <i class="fa-solid fa-chevron-right" style="font-size:1rem"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Görsel Rulosu (Horizontal Scroll Container) -->
+          <div id="temizlik-gallery-scroll" class="no-scrollbar" style="display:flex;gap:1.5rem;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding:1rem 0 2rem;width:100%">
+            ${imageCards}
+          </div>
+        </div>
+      </section>
+
+      <!-- Lightbox (Fotoğraf Önizleme Modalı) -->
+      <div id="lightbox" role="dialog" aria-modal="true" aria-label="Fotoğraf önizleme" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:1000;align-items:center;justify-content:center;padding:1rem" onclick="TemizlikPage.closeLightbox()">
+        <button onclick="TemizlikPage.closeLightbox()" aria-label="Kapat" style="position:absolute;top:1.5rem;right:1.5rem;width:3rem;height:3rem;border-radius:50%;background:rgba(255,255,255,0.1);border:none;color:#fff;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Büyük görsel" style="max-height:90vh;max-width:90vw;object-fit:contain;border-radius:0.5rem;box-shadow:0 8px 64px rgba(0,0,0,0.8)" onclick="event.stopPropagation()" />
+      </div>`;
+  },
+
+  scrollGallery(direction) {
+    const container = document.getElementById('temizlik-gallery-scroll');
+    if (!container) return;
+    const cardWidth = container.querySelector('.gallery-card')?.clientWidth || 350;
+    const scrollAmount = (cardWidth + 24) * 2 * direction; // Kaydırma miktarı (kart genişliği + boşluk) * 2 kart
+    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  },
+
+  openLightbox(src) {
+    const lb  = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    if (!lb || !img) return;
+    img.src = src;
+    lb.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  },
+
+  closeLightbox() {
+    const lb = document.getElementById('lightbox');
+    if (lb) lb.style.display = 'none';
+    document.body.style.overflow = '';
+  },
+
   render() {
     const s   = DATA.sectors.TEMIZLIK;
     const img = DATA.images;
@@ -203,6 +282,7 @@ const TemizlikPage = {
       <div id="page-temizlik" style="width:100%;display:flex;flex-direction:column;background:#fff">
         ${Navbar.render('TEMIZLIK', false)}
         ${SectorHero.render({ title: s.title, desc: s.desc, bgImage: img.TEMIZLIK_BG, id: 'temizlik-main' })}
+        ${this.renderGaleri()}
         ${this.renderSplitCTA()}
         ${this.renderEkibimiz()}
         ${this.renderKurumsal()}

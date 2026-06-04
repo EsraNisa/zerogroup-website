@@ -25,6 +25,7 @@ const SECTION_DARK = {
 
   // --- TEMİZLİK ---
   'temizlik-main': true, 
+  'temizlik-galeri': false,
   'temizlik-section-2': true,
   'temizlik-ekibimiz': false, 
   'temizlik-kurumsal': true, 
@@ -55,6 +56,7 @@ const SECTION_LABELS = {
   'ik-section-3': 'İLETİŞİM',
   // TEMIZLIK
   'temizlik-main': 'HAKKIMIZDA',
+  'temizlik-galeri': 'GALERİ',
   'temizlik-section-2': 'BİLGİ ALIN',
   'temizlik-ekibimiz': 'EKİP',
   'temizlik-kurumsal': 'KURUMSAL',
