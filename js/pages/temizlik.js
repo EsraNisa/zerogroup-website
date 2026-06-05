@@ -45,7 +45,7 @@ const TemizlikPage = {
     const features = [
       { icon: 'fa-shield-halved', title: 'Sigortalı Çalışma',  desc: "Tüm personelimiz SGK'ya kayıtlı, tam sigortalı olarak istihdam edilmektedir. Haklarınız güvence altında." },
       { icon: 'fa-graduation-cap', title: 'Eğitim & Sertifika', desc: 'İşe başlamadan önce hijyen, kimyasal kullanımı ve iş güvenliği konularında kapsamlı eğitim verilmektedir.' },
-      { icon: 'fa-calendar-check', title: 'Düzenli Ödeme',      desc: 'Maaşlar her ayın belirlenen gününde eksiksiz ödenmektedir. Geç ödeme ya da kesinti söz konusu değildir.' },
+      { icon: 'fa-calendar-check', title: 'Düzenli Ödeme',      desc: 'Maaşlar her ayın belirlenen gününde düzenli olarak ödenir. Ay içerisinde alınan avans ödemeleri, ay sonundaki net hak ediş tutarından düşülerek kalan miktar şeklinde ödenir.' },
       { icon: 'fa-shirt',          title: 'Üniforma & Ekipman', desc: 'Tüm temizlik malzemeleri ve kıyafetler tarafımızca karşılanmakta, personelimiz ek masraf yapmamaktadır.' },
       { icon: 'fa-clock',          title: 'Esnek Vardiya',      desc: 'Tam gün, yarım gün ve gece vardiyası seçenekleriyle yaşam düzeninize uygun çalışma saatleri sunulmaktadır.' },
       { icon: 'fa-handshake',      title: 'Kariyer İmkânı',     desc: 'Performansınıza göre ekip liderliği ve yöneticilik pozisyonlarına yükselme fırsatı bulunmaktadır.' },
