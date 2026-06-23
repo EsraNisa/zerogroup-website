@@ -577,6 +577,285 @@ a:focus:not(:focus-visible) { outline: none; }
 .bg-gold   { background-color: #C5A059; }
 .border-gold { border-color: #C5A059; }
 
+/* ============================================================
+   AWARDS & TIMELINE STYLES
+   ============================================================ */
+.awards-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline {
+  position: relative;
+  padding: 4rem 0;
+  margin-top: 3rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(197, 160, 89, 0) 0%, #C5A059 15%, #C5A059 85%, rgba(197, 160, 89, 0) 100%);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  margin-bottom: 5rem;
+  transition: all 0.3s ease;
+}
+
+.timeline-item.left {
+  left: 0;
+  padding-right: 4rem;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  padding-left: 4rem;
+  text-align: left;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 2.2rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #000;
+  border: 3px solid #C5A059;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(197, 160, 89, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-item.left .timeline-dot {
+  right: -9px;
+}
+
+.timeline-item.right .timeline-dot {
+  left: -9px;
+}
+
+.timeline-item:hover .timeline-dot {
+  background: #C5A059;
+  transform: scale(1.3);
+  box-shadow: 0 0 20px #C5A059;
+}
+
+.timeline-content {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  max-width: 100%;
+}
+
+.timeline-trigger {
+  background: #0d0d0d;
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  max-width: 24rem;
+  width: 100%;
+}
+
+.timeline-item.left .timeline-trigger {
+  float: right;
+}
+
+.timeline-trigger .trigger-year {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  color: #C5A059;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+.timeline-trigger .trigger-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.timeline-item:hover .timeline-trigger {
+  border-color: #C5A059;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(197, 160, 89, 0.15);
+}
+
+/* Detail Card Styling */
+.timeline-detail-card {
+  position: absolute;
+  top: 50%;
+  width: 25rem;
+  background: #000;
+  border: 1px solid #C5A059;
+  border-radius: 16px;
+  padding: 2rem;
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(197, 160, 89, 0.1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-item.left .timeline-detail-card {
+  left: calc(100% + 4rem);
+  transform: translateY(-50%) translateX(20px) scale(0.95);
+}
+
+.timeline-item.right .timeline-detail-card {
+  right: calc(100% + 4rem);
+  transform: translateY(-50%) translateX(-20px) scale(0.95);
+}
+
+/* Hover & Active States to show the detail card */
+.timeline-item:hover .timeline-detail-card,
+.timeline-item.active .timeline-detail-card {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.timeline-item.left:hover .timeline-detail-card,
+.timeline-item.left.active .timeline-detail-card {
+  transform: translateY(-50%) translateX(0) scale(1.02);
+  box-shadow: 0 15px 45px rgba(197, 160, 89, 0.25);
+}
+
+.timeline-item.right:hover .timeline-detail-card,
+.timeline-item.right.active .timeline-detail-card {
+  transform: translateY(-50%) translateX(0) scale(1.02);
+  box-shadow: 0 15px 45px rgba(197, 160, 89, 0.25);
+}
+
+/* Detail Card Content Elements */
+.detail-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.detail-card-year {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  color: #C5A059;
+  line-height: 1;
+}
+
+.detail-card-provider {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #888;
+  letter-spacing: 0.1em;
+  margin-left: 1rem;
+  text-align: right;
+}
+
+.detail-card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #C5A059;
+  line-height: 1.3;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.detail-card-desc {
+  font-size: 0.9rem;
+  color: #e2e8f0;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.detail-card-story {
+  font-size: 0.85rem;
+  color: #a0aec0;
+  line-height: 1.5;
+  border-left: 2px solid #C5A059;
+  padding-left: 0.75rem;
+  margin-top: 1rem;
+}
+
+.detail-card-story strong {
+  color: #C5A059;
+}
+
+/* Mobile responsive timeline (width <= 992px) */
+@media (max-width: 992px) {
+  .timeline::before {
+    left: 2rem;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  
+  .timeline-item.left, .timeline-item.right {
+    left: 0;
+    padding-left: 5rem;
+    padding-right: 1.5rem;
+    text-align: left;
+  }
+  
+  .timeline-item.left .timeline-dot, .timeline-item.right .timeline-dot {
+    left: calc(2rem - 9px);
+  }
+  
+  .timeline-item.left .timeline-trigger, .timeline-item.right .timeline-trigger {
+    float: none;
+    max-width: 100%;
+  }
+  
+  /* On mobile/tablet, turn detail card into a collapsible accordion */
+  .timeline-detail-card {
+    position: relative;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    margin-top: 0;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    opacity: 0;
+    border-width: 0;
+    transform: none !important;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease, margin 0.3s ease, border-width 0.3s ease;
+  }
+  
+  .timeline-item.active .timeline-detail-card {
+    max-height: 500px;
+    opacity: 1;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border-width: 1px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-scroll, .animate-scroll-reverse, .animate-float, .animate-float-delay {
     animation: none !important;

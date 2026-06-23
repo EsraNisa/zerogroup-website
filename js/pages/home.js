@@ -99,22 +99,6 @@ const HomePage = {
         <div style="font-size:0.7rem;font-family:monospace;text-transform:uppercase;letter-spacing:0.1em;color:#9ca3af;margin-top:0.5rem">${s.label}</div>
       </div>`).join('');
 
-    const testimonials = DATA.testimonials.map(t => `
-      <article style="background:#fff;border-radius:1rem;padding:2rem;box-shadow:0 1px 4px rgba(0,0,0,0.06);border:1px solid #f3f4f6;display:flex;flex-direction:column;justify-content:space-between;transition:box-shadow 0.3s,transform 0.3s" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.12)';this.style.transform='translateY(-4px)'" onmouseout="this.style.boxShadow='0 1px 4px rgba(0,0,0,0.06)';this.style.transform='none'">
-        <div>
-          <div style="font-size:3rem;color:#e5e7eb;line-height:1;margin-bottom:1rem">"</div>
-         <p style="color:#374151;font-size:0.9rem;line-height:1.7;margin-bottom:1.5rem">${sanitizeHTML(t.text)}</p>
-        </div>
-        <div style="display:flex;align-items:center;gap:1rem;padding-top:1rem;border-top:1px solid #f3f4f6">
-          <div style="width:2.5rem;height:2.5rem;border-radius:50%;background:linear-gradient(135deg,#1f2937,#4b5563);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Montserrat',sans-serif;font-size:0.85rem;flex-shrink:0">${t.person[0]}</div>
-          <div>
-            <div style="font-weight:700;font-size:0.85rem;font-family:'Montserrat',sans-serif">${t.person}</div>
-            <div style="font-size:0.7rem;color:#9ca3af">${t.title}</div>
-            <div style="font-size:0.65rem;color:#C5A059;font-family:monospace;font-weight:700;letter-spacing:0.1em;margin-top:0.2rem">${t.brand}</div>
-          </div>
-        </div>
-      </article>`).join('');
-
     return `
       <section id="references-section" style="background:#fff;color:#111827">
         <!-- Akan Logolar -->
@@ -125,7 +109,7 @@ const HomePage = {
         </div>
 
         <!-- İstatistikler -->
-        <div style="background:#000;color:#fff;padding:3rem 2rem 12rem">
+        <div style="background:#000;color:#fff;padding:3rem 2rem 5rem">
           <div style="max-width:80rem;margin:0 auto">
             <div style="text-align:center;margin-bottom:3rem">
               <span style="color:#C5A059;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:0.75rem">REFERANSLARIMIZ</span>
@@ -139,20 +123,83 @@ const HomePage = {
             </div>
           </div>
         </div>
+      </section>`;
+  },
 
-        <!-- Yorumlar -->
-        <div id="testimonials-section" class="section-padding" style="background:#f9fafb;">
-          <div style="max-width:80rem;margin:0 auto">
-            <div style="margin-bottom:4rem">
-              <span style="color:#C5A059;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:0.75rem">MÜŞTERİ GÖRÜŞLERİ</span>
-              <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;letter-spacing:-0.02em;margin:0">
-                Markalar Hakkımızda<br>
-                <span style="font-style:italic;font-weight:300;color:#9ca3af">Ne Diyor?</span>
-              </h2>
+  /* ---- Awards & Achievements ---- */
+  renderAwards() {
+    const items = DATA.awards.map((a, index) => {
+      const side = index % 2 === 0 ? 'left' : 'right';
+      return `
+        <div class="timeline-item ${side}" onclick="this.classList.toggle('active')">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <div class="timeline-trigger">
+              <span class="trigger-year">${a.year}</span>
+              <h3 class="trigger-name">${sanitizeHTML(a.name)}</h3>
             </div>
-            <div class="grid-autofill-380">
-              ${testimonials}
+            <div class="timeline-detail-card">
+              <div class="detail-card-header">
+                <span class="detail-card-year">${a.year}</span>
+                <span class="detail-card-provider">${sanitizeHTML(a.provider)}</span>
+              </div>
+              <h4 class="detail-card-title">${sanitizeHTML(a.name)}</h4>
+              <p class="detail-card-desc">${sanitizeHTML(a.description)}</p>
+              <div class="detail-card-story">
+                <strong>Başarı Hikayesi:</strong> ${sanitizeHTML(a.story)}
+              </div>
             </div>
+          </div>
+        </div>`;
+    }).join('');
+
+    return `
+      <section id="awards-section" class="section-padding" style="background:#000;color:#fff;border-top:1px solid #111;">
+        <div class="awards-container">
+          <div style="text-align:center;margin-bottom:4rem">
+            <span style="color:#C5A059;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:0.75rem">BAŞARILARIMIZ</span>
+            <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:900;letter-spacing:-0.03em;line-height:1;margin:0">
+              BAŞARILARIMIZ &<br><span style="color:#C5A059">ÖDÜLLERİMİZ</span>
+            </h2>
+            <div style="width:6rem;height:4px;background:#C5A059;margin:1.5rem auto 0"></div>
+          </div>
+          <div class="timeline">
+            ${items}
+          </div>
+        </div>
+      </section>`;
+  },
+
+  /* ---- Testimonials ---- */
+  renderTestimonials() {
+    const testimonials = DATA.testimonials.map(t => `
+      <article style="background:#fff;border-radius:1rem;padding:2rem;box-shadow:0 1px 4px rgba(0,0,0,0.06);border:1px solid #f3f4f6;display:flex;flex-direction:column;justify-content:space-between;transition:box-shadow 0.3s,transform 0.3s" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.12)';this.style.transform='translateY(-4px)'" onmouseout="this.style.boxShadow='0 1px 4px rgba(0,0,0,0.06)';this.style.transform='none'">
+        <div>
+          <div style="font-size:3rem;color:#e5e7eb;line-height:1;margin-bottom:1rem">"</div>
+          <p style="color:#374151;font-size:0.9rem;line-height:1.7;margin-bottom:1.5rem">${sanitizeHTML(t.text)}</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:1rem;padding-top:1rem;border-top:1px solid #f3f4f6">
+          <div style="width:2.5rem;height:2.5rem;border-radius:50%;background:linear-gradient(135deg,#1f2937,#4b5563);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Montserrat',sans-serif;font-size:0.85rem;flex-shrink:0">${t.person[0]}</div>
+          <div>
+            <div style="font-weight:700;font-size:0.85rem;font-family:'Montserrat',sans-serif">${t.person}</div>
+            <div style="font-size:0.7rem;color:#9ca3af">${t.title}</div>
+            <div style="font-size:0.65rem;color:#C5A059;font-family:monospace;font-weight:700;letter-spacing:0.1em;margin-top:0.2rem">${t.brand}</div>
+          </div>
+        </div>
+      </article>`).join('');
+
+    return `
+      <section id="testimonials-section" class="section-padding" style="background:#f9fafb;">
+        <div style="max-width:80rem;margin:0 auto">
+          <div style="margin-bottom:4rem">
+            <span style="color:#C5A059;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:0.75rem">MÜŞTERİ GÖRÜŞLERİ</span>
+            <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;letter-spacing:-0.02em;margin:0;color:#111827">
+              Markalar Hakkımızda<br>
+              <span style="font-style:italic;font-weight:300;color:#9ca3af">Ne Diyor?</span>
+            </h2>
+          </div>
+          <div class="grid-autofill-380">
+            ${testimonials}
           </div>
         </div>
       </section>`;
@@ -209,7 +256,6 @@ const HomePage = {
       </section>`;
   },
 
-/* ---- Compose full home page ---- */
   render() {
     return `
       <div id="page-home" style="width:100%;display:flex;flex-direction:column;min-height:100vh;background:#000">
@@ -217,6 +263,8 @@ const HomePage = {
         ${this.renderHero()}
         ${this.renderAbout()}
         ${this.renderReferences()}
+        ${this.renderAwards()}
+        ${this.renderTestimonials()}
         ${this.renderContact()}
         <div id="footer-sentinel">${Footer.render()}</div>
         ${BottomNav.render('HOME', false)}

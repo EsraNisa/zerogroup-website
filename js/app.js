@@ -15,6 +15,7 @@ const SECTION_DARK = {
   'home-hero': true,          // Koyu (Video) -> Beyaz Yazı
   'about-section': true,      // Koyu (Siyah) -> Beyaz Yazı
   'references-section': false, // Açık (Beyaz) -> Siyah Yazı
+  'awards-section': true,      // Koyu (Siyah) -> Altın/Beyaz Yazı
   'testimonials-section': false, // Açık (Gri/Beyaz) -> Siyah Yazı
   'contact-section': true,    // Koyu (Siyah) -> Beyaz Yazı
 
@@ -48,6 +49,7 @@ const SECTION_LABELS = {
   'home-hero': 'KURUMSAL',
   'about-section': 'HAKKIMIZDA',
   'references-section': 'REFERANSLAR',
+  'awards-section': 'ÖDÜLLERİMİZ',
   'testimonials-section': 'YORUMLAR',
   'contact-section': 'İLETİŞİM',
   // IK

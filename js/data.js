@@ -80,6 +80,50 @@ const DATA = {
     },
   ],
 
+  /* ---- Ödüller ve Başarılar ---- */
+  awards: [
+    {
+      id: 'award-1',
+      name: 'Yılın En İyi Çıkış Yapan Organizasyon Firması',
+      year: '2018',
+      provider: 'Ankara Genç Girişimciler Derneği',
+      description: 'Genç ve dinamik kadromuzla Ankara genelinde gerçekleştirdiğimiz yenilikçi ve yüksek katılımlı etkinliklerle sektörde fark yarattık.',
+      story: 'Zero Group olarak kuruluşumuzdan kısa bir süre sonra aldığımız bu ilk ödül, doğru yolda olduğumuzun ve Ankara etkinlik sektörüne getirdiğimiz yeni vizyonun tescili oldu.'
+    },
+    {
+      id: 'award-2',
+      name: 'Yılın En Güvenilir İnsan Kaynakları Sağlayıcısı',
+      year: '2020',
+      provider: 'İç Anadolu İş Dünyası Ödülleri',
+      description: 'Kamu kurumları ve özel sektördeki saygın markalara sağladığımız kesintisiz ve yüksek nitelikli personel desteği sayesinde güvenilirliğimizi kanıtladık.',
+      story: 'Pandemi döneminin getirdiği zorlu şartlar altında bile iş ortaklarımızın personel ihtiyaçlarını sıfır aksaklık ve tam iş sürekliliği ile karşılayarak bu ödüle layık görüldük.'
+    },
+    {
+      id: 'award-3',
+      name: 'En İyi Lojistik ve Tedarik Çözümleri Ödülü',
+      year: '2022',
+      provider: 'Sektörün Öncüleri Zirvesi',
+      description: 'Soğuk zincir lojistiği, mikro depolama ve fulfillment alanlarındaki teknolojik yatırımlarımız ve operasyonel mükemmelliğimiz ile kazandığımız prestijli bir ödül.',
+      story: 'Uçtan uca tedarik zinciri yönetiminde teslimat sürelerini optimize ederek ve hata oranlarını minimize ederek müşterilerimize sunduğumuz katma değeri artırdık.'
+    },
+    {
+      id: 'award-4',
+      name: 'Yılın En Hijyenik ve Profesyonel Temizlik Markası',
+      year: '2024',
+      provider: 'Ankara Hizmet Sektörü Başarı Ödülleri',
+      description: 'Geniş kurumsal binalar, eğitim kurumları ve AVM projelerinde uyguladığımız çevre dostu hijyen prosedürleri ve uzman ekiplerimizle liderliğimizi pekiştirdik.',
+      story: '50\'den fazla büyük ölçekli ticari yapıda sürdürülebilir temizlik ve dezenfeksiyon süreçlerini başarıyla yöneterek hijyen standartlarında çıtayı en üst seviyeye taşıdık.'
+    },
+    {
+      id: 'award-5',
+      name: 'Sürdürülebilir Büyüme ve İstihdam Ödülü',
+      year: '2025',
+      provider: 'Türkiye Girişimcilik Ödülleri',
+      description: 'Farklı sektörlerde yarattığımız yeni iş alanları, kadın istihdamına verdiğimiz destek ve istikrarlı büyüme modelimiz ile aldığımız ulusal çaptaki en prestijli başarımız.',
+      story: '2016 yılındaki kuruluşumuzdan bugüne yüzlerce gence ve uzmana kariyer fırsatı sunarak ülke ekonomisine ve istihdamına sağladığımız katkı ödüllendirildi.'
+    }
+  ],
+
   /* ---- İK kategorileri ---- */
   ikCategories: [
     { label: 'DEPO YÖNETİMİ',     sub: 'Stok ve Malzeme Takibi',         imageKey: 'IK_GARSON',    desc: 'Temizlik ekipmanları ve sarf malzemelerinizi düzenli şekilde yönetin. Stok takibi, ürün kontrolü ve operasyon süreçlerinde tam düzen sağlayın.' },

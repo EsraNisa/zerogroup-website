@@ -23,6 +23,7 @@ const Navbar = (() => {
       { label: 'KURUMSAL',    action: () => window.scrollTo({ top: 0, behavior: 'smooth' }) },
       { label: 'HAKKIMIZDA',  action: () => scrollTo('about-section')        },
       { label: 'REFERANSLAR', action: () => scrollTo('references-section')    },
+      { label: 'ÖDÜLLERİMİZ', action: () => scrollTo('awards-section')        },
       { label: 'YORUMLAR',    action: () => scrollTo('testimonials-section')  },
       { label: 'İLETİŞİM',   action: () => scrollTo('contact-section')       },
     ];
