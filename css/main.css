@@ -588,8 +588,8 @@ a:focus:not(:focus-visible) { outline: none; }
 
 .timeline {
   position: relative;
-  padding: 4rem 0 15rem; /* Large bottom padding to accommodate floating detail cards */
-  margin-top: 3rem;
+  padding: 4rem 0 4rem;
+  margin-top: 14rem; /* Safe margin so upward cards don't overlap the header */
 }
 
 .timeline::before {
@@ -682,7 +682,7 @@ a:focus:not(:focus-visible) { outline: none; }
 /* Detail Card Styling */
 .timeline-detail-card {
   position: absolute;
-  top: 110%; /* Displays detail card below trigger name */
+  bottom: 110%; /* Displays detail card above the timeline item */
   left: 50%;
   width: 20rem;
   background: #000;
@@ -694,7 +694,7 @@ a:focus:not(:focus-visible) { outline: none; }
   visibility: hidden;
   pointer-events: none;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(197, 160, 89, 0.1);
-  transform: translateX(-50%) translateY(10px) scale(0.95);
+  transform: translateX(-50%) translateY(-10px) scale(0.95);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   text-align: left;
 }
@@ -812,10 +812,11 @@ a:focus:not(:focus-visible) { outline: none; }
     margin-bottom: 2rem;
   }
   
-  /* On mobile/tablet, detail card becomes a collapsible slide-down accordion inline */
+  /* On mobile/tablet, turn detail card into a collapsible slide-down accordion inline */
   .timeline-detail-card {
     position: relative;
     top: 0 !important;
+    bottom: auto !important;
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
