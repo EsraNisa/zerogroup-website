@@ -135,11 +135,11 @@ const HomePage = {
           document.querySelectorAll('.timeline-item').forEach(function(el){ el.classList.remove('active'); });
           if(!wasActive){ this.classList.add('active'); }
         ">
-          <div class="timeline-dot" aria-hidden="true"></div>
           <div class="timeline-trigger">
             <span class="trigger-year">${a.year}</span>
             <h3 class="trigger-name">${sanitizeHTML(a.name)}</h3>
           </div>
+          <div class="timeline-dot" aria-hidden="true"></div>
           <div class="timeline-detail-card">
             <div class="detail-card-header">
               <span class="detail-card-year">${a.year}</span>
@@ -155,7 +155,7 @@ const HomePage = {
     }).join('');
 
     return `
-      <section id="awards-section" class="section-padding" style="background:#000;color:#fff;border-top:1px solid #111;overflow:visible;">
+      <section id="awards-section" class="section-padding" style="background:#000;color:#fff;border-top:1px solid #111;overflow:visible;padding-top:3rem;padding-bottom:3rem;">
         <div class="awards-container">
           <div style="text-align:center;margin-bottom:4rem">
             <span style="color:#C5A059;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:0.75rem">BAŞARILARIMIZ</span>
