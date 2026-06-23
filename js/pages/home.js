@@ -128,26 +128,23 @@ const HomePage = {
 
   /* ---- Awards & Achievements ---- */
   renderAwards() {
-    const items = DATA.awards.map((a, index) => {
-      const side = index % 2 === 0 ? 'left' : 'right';
+    const items = DATA.awards.map((a) => {
       return `
-        <div class="timeline-item ${side}" onclick="this.classList.toggle('active')">
+        <div class="timeline-item" onclick="this.classList.toggle('active')">
           <div class="timeline-dot" aria-hidden="true"></div>
-          <div class="timeline-content">
-            <div class="timeline-trigger">
-              <span class="trigger-year">${a.year}</span>
-              <h3 class="trigger-name">${sanitizeHTML(a.name)}</h3>
+          <div class="timeline-trigger">
+            <span class="trigger-year">${a.year}</span>
+            <h3 class="trigger-name">${sanitizeHTML(a.name)}</h3>
+          </div>
+          <div class="timeline-detail-card">
+            <div class="detail-card-header">
+              <span class="detail-card-year">${a.year}</span>
+              <span class="detail-card-provider">${sanitizeHTML(a.provider)}</span>
             </div>
-            <div class="timeline-detail-card">
-              <div class="detail-card-header">
-                <span class="detail-card-year">${a.year}</span>
-                <span class="detail-card-provider">${sanitizeHTML(a.provider)}</span>
-              </div>
-              <h4 class="detail-card-title">${sanitizeHTML(a.name)}</h4>
-              <p class="detail-card-desc">${sanitizeHTML(a.description)}</p>
-              <div class="detail-card-story">
-                <strong>Başarı Hikayesi:</strong> ${sanitizeHTML(a.story)}
-              </div>
+            <h4 class="detail-card-title">${sanitizeHTML(a.name)}</h4>
+            <p class="detail-card-desc">${sanitizeHTML(a.description)}</p>
+            <div class="detail-card-story">
+              <strong>Başarı Hikayesi:</strong> ${sanitizeHTML(a.story)}
             </div>
           </div>
         </div>`;
@@ -164,7 +161,9 @@ const HomePage = {
             <div style="width:6rem;height:4px;background:#C5A059;margin:1.5rem auto 0"></div>
           </div>
           <div class="timeline">
-            ${items}
+            <div class="timeline-track">
+              ${items}
+            </div>
           </div>
         </div>
       </section>`;
