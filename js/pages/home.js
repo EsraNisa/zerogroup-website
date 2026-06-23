@@ -135,6 +135,11 @@ const HomePage = {
           document.querySelectorAll('.timeline-item').forEach(function(el){ el.classList.remove('active'); });
           if(!wasActive){ this.classList.add('active'); }
         ">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-trigger">
+            <span class="trigger-year">${a.year}</span>
+            <h3 class="trigger-name">${sanitizeHTML(a.name)}</h3>
+          </div>
           <div class="timeline-detail-card">
             <div class="detail-card-header">
               <span class="detail-card-year">${a.year}</span>
@@ -146,16 +151,11 @@ const HomePage = {
               <strong>Başarı Hikayesi:</strong> ${sanitizeHTML(a.story)}
             </div>
           </div>
-          <div class="timeline-dot" aria-hidden="true"></div>
-          <div class="timeline-trigger">
-            <span class="trigger-year">${a.year}</span>
-            <h3 class="trigger-name">${sanitizeHTML(a.name)}</h3>
-          </div>
         </div>`;
     }).join('');
 
     return `
-      <section id="awards-section" class="section-padding" style="background:#000;color:#fff;border-top:1px solid #111;overflow:hidden;">
+      <section id="awards-section" class="section-padding" style="background:#000;color:#fff;border-top:1px solid #111;overflow:visible;">
         <div class="awards-container">
           <div style="text-align:center;margin-bottom:4rem">
             <span style="color:#C5A059;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:0.75rem">BAŞARILARIMIZ</span>
@@ -170,220 +170,6 @@ const HomePage = {
             </div>
           </div>
         </div>
-        <style>
-          /* ---- Timeline Layout ---- */
-          .timeline {
-            position: relative;
-            width: 100%;
-            overflow: visible;
-          }
-          .timeline-track {
-            display: flex;
-            align-items: flex-end; /* dot'lar alta hizalanır, kart yukarı büyür */
-            gap: 0;
-            position: relative;
-            padding-bottom: 0;
-          }
-          /* Yatay çizgi */
-          .timeline-track::before {
-            content: '';
-            position: absolute;
-            bottom: 2.25rem; /* dot'ların ortasına denk gelir */
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #C5A059 10%, #C5A059 90%, transparent);
-          }
-
-          /* ---- Her item ---- */
-          .timeline-item {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            cursor: pointer;
-            position: relative;
-            /* Kart alanı için minimum yer ayrılmaz — height sıfırdan büyür */
-          }
-
-          /* ---- Kart (varsayılan: gizli, yukarı açılır) ---- */
-          .timeline-detail-card {
-            width: 220px;
-            max-width: 90vw;
-            background: #111;
-            border: 1px solid #C5A059;
-            border-radius: 0.75rem;
-            padding: 1.25rem;
-            color: #fff;
-            position: absolute;
-            bottom: calc(100% + 1rem); /* dot'un üstüne, timeline-trigger'ın üstüne çık */
-            left: 50%;
-            transform: translateX(-50%) translateY(8px);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.25s ease, transform 0.25s ease;
-            z-index: 20;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
-          }
-          .timeline-item.active .timeline-detail-card {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translateX(-50%) translateY(0);
-          }
-
-          /* Kart ok işareti */
-          .timeline-detail-card::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-top: 8px solid #C5A059;
-          }
-
-          .detail-card-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-          }
-          .detail-card-year {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.6rem;
-            color: #C5A059;
-            line-height: 1;
-          }
-          .detail-card-provider {
-            font-size: 0.65rem;
-            color: #9ca3af;
-            font-family: monospace;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            line-height: 1.3;
-          }
-          .detail-card-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin: 0 0 0.6rem;
-            color: #fff;
-            line-height: 1.3;
-          }
-          .detail-card-desc {
-            font-size: 0.75rem;
-            color: #d1d5db;
-            margin: 0 0 0.75rem;
-            line-height: 1.5;
-          }
-          .detail-card-story {
-            font-size: 0.7rem;
-            color: #9ca3af;
-            line-height: 1.5;
-            border-top: 1px solid #333;
-            padding-top: 0.6rem;
-          }
-
-          /* ---- Dot ---- */
-          .timeline-dot {
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            background: #C5A059;
-            border: 2px solid #000;
-            flex-shrink: 0;
-            transition: transform 0.2s;
-            position: relative;
-            z-index: 2;
-          }
-          .timeline-item:hover .timeline-dot,
-          .timeline-item.active .timeline-dot {
-            transform: scale(1.35);
-          }
-
-          /* ---- Trigger (yıl + başlık) ---- */
-          .timeline-trigger {
-            text-align: center;
-            padding: 0.75rem 0.5rem 0;
-            width: 100%;
-          }
-          .trigger-year {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.25rem;
-            color: #C5A059;
-            display: block;
-            line-height: 1;
-          }
-          .trigger-name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.65rem;
-            font-weight: 600;
-            color: #9ca3af;
-            margin: 0.25rem 0 0;
-            line-height: 1.3;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            transition: color 0.2s;
-          }
-          .timeline-item:hover .trigger-name,
-          .timeline-item.active .trigger-name {
-            color: #fff;
-          }
-          /* Aktifken başlığı gizle — kart içinde zaten var */
-          .timeline-item.active .timeline-trigger .trigger-name {
-            opacity: 0;
-          }
-
-          /* ---- Responsive ---- */
-          @media (max-width: 640px) {
-            .timeline-track {
-              flex-direction: column;
-              align-items: stretch;
-              padding-bottom: 0;
-            }
-            .timeline-track::before {
-              display: none;
-            }
-            .timeline-item {
-              flex-direction: row;
-              align-items: center;
-              gap: 1rem;
-              padding: 1rem 0;
-              border-bottom: 1px solid #1f2937;
-            }
-            .timeline-dot {
-              flex-shrink: 0;
-            }
-            .timeline-trigger {
-              text-align: left;
-              padding: 0;
-              flex: 1;
-            }
-            .timeline-detail-card {
-              position: static;
-              transform: none;
-              opacity: 0;
-              max-height: 0;
-              overflow: hidden;
-              padding: 0;
-              border: none;
-              margin: 0;
-              box-shadow: none;
-              width: 100%;
-              transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
-            }
-            .timeline-item.active .timeline-detail-card {
-              opacity: 1;
-              max-height: 400px;
-              padding: 1.25rem;
-              border: 1px solid #C5A059;
-              margin-top: 0.75rem;
-              transform: none;
-            }
-            .timeline-detail-card::after { display: none; }
-          }
-        </style>
       </section>`;
   },
 
