@@ -770,52 +770,107 @@ a:focus:not(:focus-visible) { outline: none; }
 
 /* Mobil */
 @media (max-width: 992px) {
-  .timeline { padding: 0; }
+  .timeline {
+    padding: 0;
+    position: relative;
+  }
 
   .timeline::before {
-    top: 9px;
+    top: 0;
+    bottom: 0;
+    left: 19px;
+    right: auto;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(197,160,89,0) 0%, #C5A059 15%, #C5A059 85%, rgba(197,160,89,0) 100%);
   }
 
   .timeline-track {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    overflow-x: visible;
+    padding: 1rem 0;
+    width: 100%;
+    scrollbar-width: auto;
+    -ms-overflow-style: auto;
   }
 
-  .timeline-track::-webkit-scrollbar { display: none; }
+  .timeline-track::-webkit-scrollbar {
+    display: auto;
+  }
 
   .timeline-item {
-    min-width: 80vw;
-    scroll-snap-align: center;
-    padding: 0 1rem 1rem;
+    position: relative;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    text-align: left;
+    padding-left: 2.5rem;
+    padding-bottom: 0;
+    scroll-snap-align: none;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: 11px;
+    top: 6px;
+    z-index: 10;
+  }
+
+  .timeline-trigger {
+    display: block;
+    text-align: left;
+    padding: 0;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .timeline-trigger .trigger-year {
+    font-size: 1.8rem;
+  }
+
+  .timeline-trigger .trigger-name {
+    text-align: left;
+    padding: 0;
+    margin: 0.25rem 0 0;
+    font-size: 0.9rem;
+    opacity: 1 !important;
+    color: #fff;
+  }
+
+  .timeline-item.active .trigger-name {
+    opacity: 1 !important;
   }
 
   .timeline-detail-card {
     position: relative;
     bottom: auto;
-    left: 0;
+    left: auto;
+    transform: none !important;
     width: 100%;
     max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    overflow: hidden;
     opacity: 0;
-    border-width: 0;
-    transform: none !important;
-    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease, border-width 0.3s ease;
+    overflow: hidden;
+    padding: 0;
     margin-top: 0;
+    border-width: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease, border-width 0.3s ease, margin-top 0.3s ease;
   }
 
-  .timeline-detail-card::after { display: none; }
+  .timeline-detail-card::after {
+    display: none;
+  }
 
   .timeline-item.active .timeline-detail-card {
-    max-height: 500px;
+    max-height: 800px;
     opacity: 1;
     padding: 1.25rem;
     margin-top: 0.75rem;
     border-width: 1px;
+    border-style: solid;
+    border-color: #C5A059;
   }
 }
 
