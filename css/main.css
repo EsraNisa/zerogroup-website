@@ -457,6 +457,25 @@ a:focus:not(:focus-visible) { outline: none; }
   .hero-title { font-size: clamp(3.5rem, 20vw, 6rem) !important; }
   .hero-subtitle { font-size: 0.6rem !important; letter-spacing: 0.4em !important; }
 
+  .sector-hero {
+    min-height: 65vh !important;
+    height: 65vh !important;
+  }
+  .hero-video-container {
+    height: 70vh !important;
+  }
+  .sector-hero-text {
+    padding: 0 1.5rem !important;
+  }
+  .sector-hero-text h1 {
+    font-size: clamp(1.8rem, 7vw, 3rem) !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .sector-hero-text p {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+  }
+
   /* ---- Layout & Grid Mobilde Tek Sütun ---- */
   .grid-2col,
   .grid-2col-small-gap,
@@ -487,15 +506,32 @@ a:focus:not(:focus-visible) { outline: none; }
     border-width: 4px !important;
   }
 
-  /* ---- Genel Boşluk Azaltma ve Haritayı Alta Alma ---- */
-  section[id$="-section-3"], #ik-main ~ section {
-    height: auto !important;
-    min-height: auto !important;
-    padding: 3rem 1.25rem 5rem !important; 
-  }
-  
-  #org-team {
-    min-height: 85vh !important;
+  /* ---- Bölümlerin Ekranı Doldurması ve Ortalama ---- */
+  #about-section,
+  #references-section > div:last-child,
+  #awards-section,
+  #testimonials-section,
+  #contact-section,
+  #ik-diger,
+  #ik-section-3,
+  #temizlik-galeri,
+  #temizlik-section-2,
+  #temizlik-ekibimiz,
+  #temizlik-kurumsal,
+  #temizlik-section-3,
+  #org-section-2,
+  #org-team,
+  #org-section-3,
+  #lojistik-section-2,
+  #lojistik-section-3 {
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+    box-sizing: border-box !important;
   }
 
   /* İletişim alanlarındaki grid yapısını tek sütuna çevirip haritayı alta iter */
@@ -549,9 +585,9 @@ a:focus:not(:focus-visible) { outline: none; }
   /* ---- Temizlik Sayfası Spesifik ---- */
   #temizlik-section-2 { flex-direction: column !important; }
   .split-panel { 
-    flex: none !important; 
+    flex: 1 1 50% !important; 
     width: 100% !important; 
-    min-height: 40vh !important; 
+    min-height: 50vh !important; 
     border-right: none !important; 
     border-bottom: 1px solid #1f2937 !important; 
   }

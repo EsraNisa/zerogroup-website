@@ -9,7 +9,7 @@ const IKPage = {
     const cats = DATA.ikCategories.map((cat, i) => `
       <div class="ik-cat-item" data-idx="${i}" style="cursor:pointer;border-left:2px solid #d1d5db;padding-left:1.5rem;transition:all 0.3s;opacity:0.5" onclick="IKPage.selectCategory(${i})">
         <span class="ik-cat-label" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,4rem);letter-spacing:0.05em;color:#9ca3af;transition:all 0.3s;display:block">${cat.label}</span>
-        <span class="ik-cat-sub" style="font-size:0.85rem;color:#dc2626;display:none;margin-top:0.25rem">${cat.sub}</span>
+        <span class="ik-cat-sub" style="font-size:0.85rem;color:#C5A059;display:none;margin-top:0.25rem">${cat.sub}</span>
       </div>`).join('');
 
     const firstCat = DATA.ikCategories[0];
@@ -29,8 +29,8 @@ const IKPage = {
               <div style="position:absolute;bottom:0;left:0;width:100%;padding:1.5rem 2rem">
                 <div style="background:rgba(255,255,255,0.1);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.2);padding:1.5rem;border-radius:1rem">
                   <div style="display:flex;align-items:center;gap:1rem;margin-bottom:0.75rem">
-                    <div style="width:2rem;height:2px;background:#ef4444"></div>
-                    <span style="color:#f87171;font-weight:700;letter-spacing:0.15em;font-size:0.7rem;text-transform:uppercase">Hizmet Detayı</span>
+                    <div style="width:2rem;height:2px;background:#C5A059"></div>
+                    <span style="color:#C5A059;font-weight:700;letter-spacing:0.15em;font-size:0.7rem;text-transform:uppercase">Hizmet Detayı</span>
                   </div>
                   <h3 id="ik-cat-title" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(1.2rem,3vw,2rem);color:#fff;margin:0 0 0.75rem;line-height:1.2">${firstCat.sub}</h3>
                   <p id="ik-cat-desc" style="color:#d1d5db;font-size:0.85rem;line-height:1.7;max-width:36rem;margin:0">${firstCat.desc}</p>
@@ -51,7 +51,7 @@ selectCategory(idx) {
     // Menü öğelerini güncelle
     document.querySelectorAll('.ik-cat-item').forEach((el, i) => {
       const isActive = i === idx;
-      el.style.borderLeftColor = isActive ? '#dc2626' : '#d1d5db';
+      el.style.borderLeftColor = isActive ? '#C5A059' : '#d1d5db';
       el.style.opacity = isActive ? '1' : '0.5';
       
       const label = el.querySelector('.ik-cat-label');
@@ -87,26 +87,26 @@ selectCategory(idx) {
     return `
       <section id="ik-section-3" class="section-padding" style="width:100%;min-height:100vh;background:#080808;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden">
         <div style="position:absolute;inset:0;pointer-events:none" aria-hidden="true">
-          <div style="position:absolute;top:-5%;left:-5%;width:35%;height:35%;background:rgba(127,29,29,0.15);border-radius:50%;filter:blur(100px)"></div>
+          <div style="position:absolute;top:-5%;left:-5%;width:35%;height:35%;background:rgba(197,160,89,0.15);border-radius:50%;filter:blur(100px)"></div>
           <div style="position:absolute;bottom:-5%;right:-5%;width:35%;height:35%;background:rgba(29,78,216,0.15);border-radius:50%;filter:blur(100px)"></div>
         </div>
         <div style="width:100%;max-width:80rem;position:relative;z-index:10;" class="grid-2col contact-grid-wrapper">
           <div>
-            <span style="color:#ef4444;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:1rem;text-transform:uppercase">İletişim</span>
+            <span style="color:#C5A059;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:1rem;text-transform:uppercase">İletişim</span>
             <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(3rem,6vw,5rem);font-weight:900;letter-spacing:-0.03em;line-height:1;margin:0 0 1.5rem">
               BİZE<br><span style="font-style:italic;font-weight:300;color:#6b7280">Ulaşın.</span>
             </h2>
-            <div style="width:6rem;height:4px;background:#dc2626;margin-bottom:2rem"></div>
+            <div style="width:6rem;height:4px;background:#C5A059;margin-bottom:2rem"></div>
             <div style="display:flex;flex-direction:column;gap:1.5rem;margin-bottom:2rem">
               <a href="tel:+905312639814" style="display:flex;align-items:center;gap:1rem;text-decoration:none;color:inherit">
-                <div style="width:3rem;height:3rem;border-radius:50%;border:1px solid #374151;display:flex;align-items:center;justify-content:center;transition:background 0.2s" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background=''"><i class="fa-solid fa-phone text-sm"></i></div>
+                <div style="width:3rem;height:3rem;border-radius:50%;border:1px solid #374151;display:flex;align-items:center;justify-content:center;transition:background 0.2s" onmouseover="this.style.background='#C5A059'" onmouseout="this.style.background=''"><i class="fa-solid fa-phone text-sm"></i></div>
                 <div>
                   <span style="font-size:0.65rem;color:#6b7280;font-family:monospace;text-transform:uppercase;display:block">GSM</span>
                   <span style="font-size:1.2rem;font-weight:700">${c.tel3}</span>
                 </div>
               </a>
               <a href="mailto:${c.email}" style="display:flex;align-items:center;gap:1rem;text-decoration:none;color:inherit">
-                <div style="width:3rem;height:3rem;border-radius:50%;border:1px solid #374151;display:flex;align-items:center;justify-content:center;transition:background 0.2s" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background=''"><i class="fa-solid fa-envelope text-sm"></i></div>
+                <div style="width:3rem;height:3rem;border-radius:50%;border:1px solid #374151;display:flex;align-items:center;justify-content:center;transition:background 0.2s" onmouseover="this.style.background='#C5A059'" onmouseout="this.style.background=''"><i class="fa-solid fa-envelope text-sm"></i></div>
                 <div>
                   <span style="font-size:0.65rem;color:#6b7280;font-family:monospace;text-transform:uppercase;display:block">E-Posta</span>
                   <span style="font-size:1.2rem;font-weight:700">${c.email}</span>

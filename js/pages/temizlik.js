@@ -52,8 +52,8 @@ const TemizlikPage = {
     ];
     const cards = features.map(f => `
       <div style="background:#f9fafb;border-radius:1rem;padding:2rem;border:1px solid #f3f4f6;transition:box-shadow 0.3s,transform 0.3s" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.1)';this.style.transform='translateY(-4px)'" onmouseout="this.style.boxShadow='';this.style.transform=''">
-        <div style="width:3rem;height:3rem;border-radius:0.75rem;background:#fef2f2;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;transition:background 0.3s" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background='#fef2f2'">
-          <i class="fa-solid ${f.icon}" style="color:#dc2626;font-size:1.2rem;transition:color 0.3s"></i>
+        <div style="width:3rem;height:3rem;border-radius:0.75rem;background:rgba(197,160,89,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;transition:background 0.3s" onmouseover="this.style.background='#C5A059'" onmouseout="this.style.background='rgba(197,160,89,0.1)'">
+          <i class="fa-solid ${f.icon}" style="color:#C5A059;font-size:1.2rem;transition:color 0.3s"></i>
         </div>
         <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:1rem;margin:0 0 0.75rem">${f.title}</h3>
         <p style="font-size:0.85rem;color:#6b7280;line-height:1.7;margin:0">${f.desc}</p>
@@ -63,11 +63,11 @@ const TemizlikPage = {
       <section id="temizlik-ekibimiz" class="section-padding" style="width:100%;min-height:100vh;background:#fff;">
         <div style="max-width:80rem;margin:0 auto">
           <div style="margin-bottom:4rem">
-            <span style="color:#dc2626;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:0.75rem;text-transform:uppercase">Temizlik Personeli</span>
+            <span style="color:#C5A059;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:0.75rem;text-transform:uppercase">Temizlik Personeli</span>
             <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:900;letter-spacing:-0.03em;line-height:1;margin:0 0 0.5rem">
               EKİBİMİZ<br><span style="color:#9ca3af;font-weight:300">HAKKINDA</span>
             </h2>
-            <div style="width:6rem;height:4px;background:#dc2626;margin:1.5rem 0 2rem"></div>
+            <div style="width:6rem;height:4px;background:#C5A059;margin:1.5rem 0 2rem"></div>
             <p style="color:#4b5563;font-size:1.1rem;max-width:40rem;line-height:1.7;margin:0">
               Zero Group olarak temizlik sektöründe güvenilir, deneyimli ve profesyonel personel kadromuzla hizmet veriyoruz.
               Ekibimize katılmak isteyen adaylara sağladığımız avantajlar ve çalışma koşulları hakkında tüm detayları aşağıda bulabilirsiniz.
@@ -146,26 +146,26 @@ const TemizlikPage = {
     return `
       <section id="temizlik-section-3" class="section-padding" style="width:100%;min-height:100vh;background:#080808;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden">
         <div style="position:absolute;inset:0;pointer-events:none" aria-hidden="true">
-          <div style="position:absolute;top:-5%;left:-5%;width:35%;height:35%;background:rgba(127,29,29,0.15);border-radius:50%;filter:blur(100px)"></div>
+          <div style="position:absolute;top:-5%;left:-5%;width:35%;height:35%;background:rgba(197,160,89,0.15);border-radius:50%;filter:blur(100px)"></div>
           <div style="position:absolute;bottom:-5%;right:-5%;width:35%;height:35%;background:rgba(29,78,216,0.15);border-radius:50%;filter:blur(100px)"></div>
         </div>
         <div style="width:100%;max-width:80rem;position:relative;z-index:10;" class="grid-2col contact-grid-wrapper">
           <div>
-            <span style="color:#ef4444;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:1rem;text-transform:uppercase">İletişim</span>
+            <span style="color:#C5A059;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:1rem;text-transform:uppercase">İletişim</span>
             <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(3rem,6vw,5rem);font-weight:900;letter-spacing:-0.03em;line-height:1;margin:0 0 1.5rem">
               BİZE<br><span style="font-style:italic;font-weight:300;color:#6b7280">Ulaşın.</span>
             </h2>
-            <div style="width:6rem;height:4px;background:#dc2626;margin-bottom:2rem"></div>
+            <div style="width:6rem;height:4px;background:#C5A059;margin-bottom:2rem"></div>
             <div style="display:flex;flex-direction:column;gap:1.5rem;margin-bottom:2rem">
               <a href="tel:+905312639814" style="display:flex;align-items:center;gap:1rem;text-decoration:none;color:inherit">
-                <div style="width:3rem;height:3rem;border-radius:50%;border:1px solid #374151;display:flex;align-items:center;justify-content:center;transition:background 0.2s" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background=''"><i class="fa-solid fa-phone text-sm"></i></div>
+                <div style="width:3rem;height:3rem;border-radius:50%;border:1px solid #374151;display:flex;align-items:center;justify-content:center;transition:background 0.2s" onmouseover="this.style.background='#C5A059'" onmouseout="this.style.background=''"><i class="fa-solid fa-phone text-sm"></i></div>
                 <div>
                   <span style="font-size:0.65rem;color:#6b7280;font-family:monospace;text-transform:uppercase;display:block">GSM</span>
                   <span style="font-size:1.2rem;font-weight:700">${c.tel3}</span>
                 </div>
               </a>
               <a href="mailto:${c.email}" style="display:flex;align-items:center;gap:1rem;text-decoration:none;color:inherit">
-                <div style="width:3rem;height:3rem;border-radius:50%;border:1px solid #374151;display:flex;align-items:center;justify-content:center;transition:background 0.2s" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background=''"><i class="fa-solid fa-envelope text-sm"></i></div>
+                <div style="width:3rem;height:3rem;border-radius:50%;border:1px solid #374151;display:flex;align-items:center;justify-content:center;transition:background 0.2s" onmouseover="this.style.background='#C5A059'" onmouseout="this.style.background=''"><i class="fa-solid fa-envelope text-sm"></i></div>
                 <div>
                   <span style="font-size:0.65rem;color:#6b7280;font-family:monospace;text-transform:uppercase;display:block">E-Posta</span>
                   <span style="font-size:1.2rem;font-weight:700">${c.email}</span>
@@ -201,9 +201,9 @@ const TemizlikPage = {
     const imageCards = photos.map((src, i) => `
       <div class="gallery-card" onclick="TemizlikPage.openLightbox('${src}')" style="flex:0 0 clamp(280px, 30vw, 380px);position:relative;border-radius:1rem;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.06);cursor:zoom-in;aspect-ratio:4/3;transition:transform 0.4s cubic-bezier(0.25,1,0.5,1),box-shadow 0.4s ease" onmouseover="this.style.transform='translateY(-8px)';this.style.boxShadow='0 20px 40px rgba(0,0,0,0.12)';this.querySelector('img').style.transform='scale(1.08)';this.querySelector('.gallery-overlay').style.opacity='1'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 10px 30px rgba(0,0,0,0.06)';this.querySelector('img').style.transform='scale(1)';this.querySelector('.gallery-overlay').style.opacity='0'">
         <img src="${src}" alt="Temizlik Hizmeti ${i+1}" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease" />
-        <div class="gallery-overlay" style="position:absolute;inset:0;background:rgba(220,38,38,0.2);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.4s ease;pointer-events:none">
+        <div class="gallery-overlay" style="position:absolute;inset:0;background:rgba(197,160,89,0.2);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.4s ease;pointer-events:none">
           <div style="width:3.5rem;height:3.5rem;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,0.2)">
-            <i class="fa-solid fa-magnifying-glass-plus" style="color:#dc2626;font-size:1.2rem"></i>
+            <i class="fa-solid fa-magnifying-glass-plus" style="color:#C5A059;font-size:1.2rem"></i>
           </div>
         </div>
       </div>
@@ -215,11 +215,11 @@ const TemizlikPage = {
           <!-- Üst Başlık ve Butonlar -->
           <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:2rem">
             <div style="flex:1;min-width:280px">
-              <span style="color:#dc2626;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:0.75rem;text-transform:uppercase">Hizmetlerimizden Kareler</span>
+              <span style="color:#C5A059;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:0.75rem;text-transform:uppercase">Hizmetlerimizden Kareler</span>
               <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:900;letter-spacing:-0.03em;line-height:1;margin:0 0 0.5rem">
                 HİZMET<br><span style="color:#9ca3af;font-weight:300">GÖRSELLERİ</span>
               </h2>
-              <div style="width:6rem;height:4px;background:#dc2626;margin:1.5rem 0 2rem"></div>
+              <div style="width:6rem;height:4px;background:#C5A059;margin:1.5rem 0 2rem"></div>
               <p style="color:#4b5563;font-size:1.1rem;max-width:40rem;line-height:1.7;margin:0">
                 Zero Group Temizlik Hizmetleri olarak gerçekleştirdiğimiz profesyonel temizlik çalışmalarımızdan ve yüksek hijyen standartlarımızdan kesitler.
               </p>
@@ -227,10 +227,10 @@ const TemizlikPage = {
             
             <!-- Kaydırma Butonları -->
             <div style="display:flex;gap:1rem;margin-bottom:0.5rem">
-              <button onclick="TemizlikPage.scrollGallery(-1)" aria-label="Geri" style="width:3.5rem;height:3.5rem;border-radius:50%;border:1px solid #e5e7eb;background:#fff;color:#111;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s" onmouseover="this.style.background='#dc2626';this.style.borderColor='#dc2626';this.style.color='#fff';this.style.transform='scale(1.05)'" onmouseout="this.style.background='#fff';this.style.borderColor='#e5e7eb';this.style.color='#111';this.style.transform='scale(1)'">
+              <button onclick="TemizlikPage.scrollGallery(-1)" aria-label="Geri" style="width:3.5rem;height:3.5rem;border-radius:50%;border:1px solid #e5e7eb;background:#fff;color:#111;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s" onmouseover="this.style.background='#C5A059';this.style.borderColor='#C5A059';this.style.color='#fff';this.style.transform='scale(1.05)'" onmouseout="this.style.background='#fff';this.style.borderColor='#e5e7eb';this.style.color='#111';this.style.transform='scale(1)'">
                 <i class="fa-solid fa-chevron-left" style="font-size:1rem"></i>
               </button>
-              <button onclick="TemizlikPage.scrollGallery(1)" aria-label="İleri" style="width:3.5rem;height:3.5rem;border-radius:50%;border:1px solid #e5e7eb;background:#fff;color:#111;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s" onmouseover="this.style.background='#dc2626';this.style.borderColor='#dc2626';this.style.color='#fff';this.style.transform='scale(1.05)'" onmouseout="this.style.background='#fff';this.style.borderColor='#e5e7eb';this.style.color='#111';this.style.transform='scale(1)'">
+              <button onclick="TemizlikPage.scrollGallery(1)" aria-label="İleri" style="width:3.5rem;height:3.5rem;border-radius:50%;border:1px solid #e5e7eb;background:#fff;color:#111;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s" onmouseover="this.style.background='#C5A059';this.style.borderColor='#C5A059';this.style.color='#fff';this.style.transform='scale(1.05)'" onmouseout="this.style.background='#fff';this.style.borderColor='#e5e7eb';this.style.color='#111';this.style.transform='scale(1)'">
                 <i class="fa-solid fa-chevron-right" style="font-size:1rem"></i>
               </button>
             </div>

@@ -8,7 +8,16 @@ const OrganizationPage = {
 /* ---- Polaroid / Ekip bölümü ---- */
   renderTeam() {
     const pol  = DATA.polaroids;
-    const pol2 = [...pol, ...pol];
+    
+    // Shift arrays to offset them vertically so identical pictures don't align
+    const polRow1 = [...pol];
+    const polRow2 = [...pol.slice(7), ...pol.slice(0, 7)];
+    const polRow3 = [...pol.slice(14), ...pol.slice(0, 14)];
+
+    // Duplicate each list for seamless infinite marquee scroll
+    const pol2Row1 = [...polRow1, ...polRow1];
+    const pol2Row2 = [...polRow2, ...polRow2];
+    const pol2Row3 = [...polRow3, ...polRow3];
 
     const row = (items) => items.map((src) => {
       const randomRotate = (Math.random() * 6 - 3).toFixed(1);
@@ -20,9 +29,9 @@ const OrganizationPage = {
     return `
       <section id="org-team" style="width:100%;height:100vh;background:#000;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden" aria-label="Ekibimiz">
         <div style="position:absolute;inset:0;z-index:0;display:flex;flex-direction:column;justify-content:center;gap:2rem;opacity:0.6;pointer-events:none" aria-hidden="true">
-          <div class="animate-scroll" style="display:flex;width:max-content">${row(pol2)}</div>
-          <div class="animate-scroll-reverse" style="display:flex;width:max-content">${row([...pol2].reverse())}</div>
-          <div class="animate-scroll" style="display:flex;width:max-content">${row(pol2)}</div>
+          <div class="animate-scroll" style="display:flex;width:max-content">${row(pol2Row1)}</div>
+          <div class="animate-scroll-reverse" style="display:flex;width:max-content">${row([...pol2Row2].reverse())}</div>
+          <div class="animate-scroll" style="display:flex;width:max-content">${row(pol2Row3)}</div>
         </div>
         <div style="position:absolute;inset:0;background:rgba(0,0,0,0.3);z-index:1" aria-hidden="true"></div>
 
@@ -40,7 +49,7 @@ const OrganizationPage = {
 
 /* ---- Poster + Albüm ---- */
   renderProjects() {
-    const posters = DATA.posters.slice(0, 5);
+    const posters = DATA.posters.slice(0, 4);
     const events  = DATA.eventPhotos;
 
     const posterItems = posters.map((poster, i) => {

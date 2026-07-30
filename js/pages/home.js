@@ -217,16 +217,16 @@ const HomePage = {
         <div style="max-width:80rem;margin:0 auto;" class="grid-2col">
           <div style="display:flex;flex-direction:column;justify-content:space-between;gap:2rem">
             <div>
-              <span style="color:#C5A059;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:1rem">CONTACT</span>
-              <h2 style="font-family:'Montserrat',sans-serif;font-style:italic;font-size:clamp(2rem,5vw,3.5rem);margin:0 0 3rem">Let's talk.</h2>
+              <span style="color:#C5A059;font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;display:block;margin-bottom:1rem">İLETİŞİM</span>
+              <h2 style="font-family:'Montserrat',sans-serif;font-style:italic;font-size:clamp(2rem,5vw,3.5rem);margin:0 0 3rem">BİZE ULAŞIN</h2>
             </div>
             <div style="display:flex;flex-direction:column;gap:1.5rem">
               <a href="mailto:${c.email}" style="display:block;text-decoration:none;color:inherit" class="contact-link-block">
-                <span style="font-size:0.7rem;color:#6b7280;font-family:monospace;text-transform:uppercase;display:block;margin-bottom:0.25rem;transition:color 0.2s" onmouseover="this.style.color='#C5A059'" onmouseout="this.style.color='#6b7280'">Email</span>
+                <span style="font-size:0.7rem;color:#6b7280;font-family:monospace;text-transform:uppercase;display:block;margin-bottom:0.25rem;transition:color 0.2s" onmouseover="this.style.color='#C5A059'" onmouseout="this.style.color='#6b7280'">E-POSTA</span>
                 <span style="font-size:clamp(1rem,2.5vw,1.8rem);font-weight:700;text-decoration:underline;text-decoration-color:#C5A059;text-underline-offset:8px;text-decoration-thickness:1px">${c.email}</span>
               </a>
               <a href="tel:+903124359272" style="display:block;text-decoration:none;color:inherit">
-                <span style="font-size:0.7rem;color:#6b7280;font-family:monospace;text-transform:uppercase;display:block;margin-bottom:0.25rem">Phone</span>
+                <span style="font-size:0.7rem;color:#6b7280;font-family:monospace;text-transform:uppercase;display:block;margin-bottom:0.25rem">GSM</span>
                 <span style="font-size:clamp(1rem,2.5vw,1.8rem);font-weight:700">${c.tel1}</span>
               </a>
             </div>
