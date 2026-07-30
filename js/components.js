@@ -86,6 +86,8 @@ const Navbar = (() => {
         </button>
       </li>`).join('');
 
+    const pageLabels = { HOME: 'ANASAYFA', ORGANIZATION: 'ORGANİZASYON', IK: 'İK', TEMIZLIK: 'TEMİZLİK', LOJISTIK: 'LOJİSTİK' };
+
     return `
       <header id="site-header" class="${darkMode ? 'dark-text' : ''}">
         <a id="zero-logo" href="#" onclick="App.goHome(event)">
@@ -109,15 +111,23 @@ const Navbar = (() => {
             </button>
           </div>
           
+          <div style="font-size:0.75rem;color:#C5A059;font-family:monospace;letter-spacing:0.1em;margin-bottom:1.5rem;margin-top:-1rem;text-transform:uppercase;border-left:2px solid #C5A059;padding-left:0.5rem">Mevcut Sayfa: ${pageLabels[view]}</div>
+          
           <div class="mobile-menu-section-title">Bu Sayfada</div>
           <ul class="mobile-menu-links">
             ${li}
           </ul>
 
-          <div class="mobile-menu-section-title">Hizmetlerimiz</div>
-          <ul class="mobile-menu-links">
+          <div class="mobile-menu-section-title">Firmalarımız</div>
+          <ul class="mobile-menu-links mobile-menu-links-small">
             ${mobilePagesLi}
           </ul>
+
+          <div style="margin-top: auto; padding-top: 1rem;">
+            <button class="mobile-menu-whatsapp-btn" onclick="Utils.openLink(DATA.contact.whatsapp)">
+              <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem;"></i> WHATSAPP İLE ULAŞIN
+            </button>
+          </div>
         </div>
       </header>`;
   }

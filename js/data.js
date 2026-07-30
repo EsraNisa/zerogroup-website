@@ -84,35 +84,35 @@ const DATA = {
   awards: [
     {
       id: 'award-1',
-      name: 'Yılın En İyi Çıkış Yapan Organizasyon Firması',
-      year: '2018',
+      name: 'Yılın En İyi Etkinlik Markası',
+      year: '2022',
       provider: 'Ankara Genç Girişimciler Derneği',
-      description: 'Genç ve dinamik kadromuzla Ankara genelinde gerçekleştirdiğimiz yenilikçi ve yüksek katılımlı etkinliklerle sektörde fark yarattık.',
-      story: 'Zero Group olarak kuruluşumuzdan kısa bir süre sonra aldığımız bu ilk ödül, doğru yolda olduğumuzun ve Ankara etkinlik sektörüne getirdiğimiz yeni vizyonun tescili oldu.'
+      description: '"Yılın En İyi Etkinlik Markası" ödülü, etkinlik ve organizasyon sektöründe kalite standartlarını yükselten, yaratıcı projeler geliştiren ve başarılı operasyon yönetimiyle fark oluşturan markalara verilen prestijli bir başarı ödülüdür. Bu ödül; hizmet kalitesi, müşteri memnuniyeti, organizasyon başarısı ve sektöre sağlanan katkılar dikkate alınarak takdim edilmektedir.',
+      story: 'Zero Group, gerçekleştirdiği kurumsal organizasyonlar, lansmanlar, özel davetler ve geniş kapsamlı etkinliklerde sergilediği profesyonel yönetim anlayışıyla bu ödüle layık görüldü. Planlama, koordinasyon ve uygulama süreçlerindeki yüksek hizmet kalitesi sayesinde sektörün güvenilir markalarından biri olarak önemli bir başarıya imza attı.'
     },
     {
       id: 'award-2',
-      name: 'Yılın En Güvenilir İnsan Kaynakları Sağlayıcısı',
-      year: '2020',
+      name: 'Meslek Başarı Ödülü',
+      year: '2023',
       provider: 'İç Anadolu İş Dünyası Ödülleri',
-      description: 'Kamu kurumları ve özel sektördeki saygın markalara sağladığımız kesintisiz ve yüksek nitelikli personel desteği sayesinde güvenilirliğimizi kanıtladık.',
-      story: 'Pandemi döneminin getirdiği zorlu şartlar altında bile iş ortaklarımızın personel ihtiyaçlarını sıfır aksaklık ve tam iş sürekliliği ile karşılayarak bu ödüle layık görüldük.'
+      description: 'Meslek Başarı Ödülü, faaliyet gösterdiği sektörde sürdürülebilir başarı sağlayan, kalite anlayışıyla örnek olan ve mesleki gelişime katkıda bulunan kişi ve kurumlara verilen saygın bir ödüldür. Bu ödül, yalnızca ticari başarıyı değil; kurumsal vizyonu, güvenilirliği ve sektörel katkıyı da temsil eder.',
+      story: 'Zero Group, hizmet sektöründe ortaya koyduğu istikrarlı büyüme, güçlü organizasyon yapısı ve müşteri odaklı hizmet anlayışı sayesinde Meslek Başarı Ödülüne layık görüldü. Şirket, farklı sektörlerde sunduğu profesyonel çözümler ve sürekli gelişim vizyonuyla sektöründe örnek gösterilen markalar arasında yer almaktadır.'
     },
     {
       id: 'award-3',
-      name: 'En İyi Lojistik ve Tedarik Çözümleri Ödülü',
-      year: '2022',
-      provider: 'Sektörün Öncüleri Zirvesi',
-      description: 'Soğuk zincir lojistiği, mikro depolama ve fulfillment alanlarındaki teknolojik yatırımlarımız ve operasyonel mükemmelliğimiz ile kazandığımız prestijli bir ödül.',
-      story: 'Uçtan uca tedarik zinciri yönetiminde teslimat sürelerini optimize ederek ve hata oranlarını minimize ederek müşterilerimize sunduğumuz katma değeri artırdık.'
+      name: 'Genç Girişimcilik Konferansı',
+      year: '2025',
+      provider: 'Ufuk Üniversitesi',
+      description: 'Konuşmacı plaketleri, bilgi ve deneyimlerini paylaşarak öğrencilere ilham veren, akademik ve kişisel gelişime katkı sağlayan isimlere teşekkür amacıyla takdim edilmektedir. Bu plaket, konuşmacının etkinliğe sağladığı değerli katkının kalıcı bir hatırası niteliğindedir.',
+      story: 'Zero Group kurucusu, Ufuk Üniversitesinin davetlisi olarak düzenlenen "Genç Girişimcilik" etkinliğinde öğrencilerle bir araya geldi. Girişimcilik yolculuğu, iş dünyasında karşılaşılan zorluklar ve başarıya ulaşma süreci hakkında deneyimlerini paylaşarak genç girişimcilere ilham verdi. Etkinlik sonunda üniversite tarafından teşekkür plaketi takdim edildi.'
     },
     {
       id: 'award-4',
-      name: 'Yılın En Hijyenik ve Profesyonel Temizlik Markası',
-      year: '2024',
+      name: 'Vendetta Etkinliği',
+      year: '2026',
       provider: 'Ankara Hizmet Sektörü Başarı Ödülleri',
-      description: 'Geniş kurumsal binalar, eğitim kurumları ve AVM projelerinde uyguladığımız çevre dostu hijyen prosedürleri ve uzman ekiplerimizle liderliğimizi pekiştirdik.',
-      story: '50\'den fazla büyük ölçekli ticari yapıda sürdürülebilir temizlik ve dezenfeksiyon süreçlerini başarıyla yöneterek hijyen standartlarında çıtayı en üst seviyeye taşıdık.'
+      description: 'Teşekkür plaketleri, başarılı organizasyonların planlanması ve hayata geçirilmesinde emeği bulunan kurum ve iş ortaklarına, gösterdikleri özveri ve profesyonel katkılar dolayısıyla sunulan kurumsal takdir belgeleridir. Bu tür plaketler, güçlü iş birliklerinin ve başarılı projelerin simgesi olarak kabul edilir.',
+      story: 'Zero Group, Vendetta etkinliğinin organizasyon sürecinde üstlendiği başarılı koordinasyon, ekip yönetimi ve operasyonel planlama sayesinde teşekkür plaketi ile onurlandırıldı. Etkinliğin her aşamasında gösterilen profesyonel yaklaşım ve kusursuz organizasyon yönetimi, şirketin etkinlik sektöründeki güçlü konumunu bir kez daha ortaya koydu.'
     },
     {
       id: 'award-5',

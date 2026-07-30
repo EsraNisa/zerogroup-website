@@ -459,11 +459,11 @@ a:focus:not(:focus-visible) { outline: none; }
   .hero-subtitle { font-size: 0.6rem !important; letter-spacing: 0.4em !important; }
 
   .sector-hero {
-    min-height: 65vh !important;
-    height: 65vh !important;
+    min-height: 100vh !important;
+    height: 100vh !important;
   }
   .hero-video-container {
-    height: 70vh !important;
+    height: 100vh !important;
   }
   .sector-hero-text {
     padding: 0 1.5rem !important;
@@ -496,7 +496,7 @@ a:focus:not(:focus-visible) { outline: none; }
   }
 
   .map-box {
-    height: 300px !important;
+    height: 450px !important;
     width: 100% !important;
     min-width: unset !important;
   }
@@ -535,6 +535,28 @@ a:focus:not(:focus-visible) { outline: none; }
     box-sizing: border-box !important;
   }
 
+  /* Flex çökmesini (collapse) önlemek için iç div genişliklerini %100 yap */
+  #about-section > div,
+  #references-section > div:last-child > div,
+  #awards-section > div,
+  #testimonials-section > div,
+  #contact-section > div,
+  #ik-diger > div,
+  #ik-section-3 > div,
+  #temizlik-galeri > div,
+  #temizlik-section-2 > div,
+  #temizlik-ekibimiz > div,
+  #temizlik-kurumsal > div,
+  #temizlik-section-3 > div,
+  #org-section-2 > div,
+  #org-team > div,
+  #org-section-3 > div,
+  #lojistik-section-2 > div,
+  #lojistik-section-3 > div {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
   /* İletişim alanlarındaki grid yapısını tek sütuna çevirip haritayı alta iter */
   section[id$="-section-3"] > div, 
   #contact-section > div {
@@ -560,8 +582,13 @@ a:focus:not(:focus-visible) { outline: none; }
   .org-cards-container {
     flex-direction: column !important;
     align-items: center !important;
+    gap: 3rem !important;
   }
-  .org-card { width: 90vw !important; }
+  .org-card { 
+    width: 290px !important; 
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
   
   /* ---- İK Sayfası Spesifik ---- */
   #ik-cat-list {
@@ -724,6 +751,39 @@ a:focus:not(:focus-visible) { outline: none; }
 
   #site-header.menu-active {
     z-index: 1001 !important;
+  }
+
+  .mobile-menu-whatsapp-btn {
+    width: 100%;
+    padding: 0.85rem;
+    background: #16a34a;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+    margin-top: 1.5rem;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .mobile-menu-whatsapp-btn:active {
+    background: #15803d;
+    transform: scale(0.98);
+  }
+
+  .mobile-menu-links-small button,
+  .mobile-menu-links-small a {
+    font-size: 0.9rem !important;
+    color: #aaa !important;
+    padding: 0.3rem 0 !important;
   }
 }
 
