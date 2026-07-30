@@ -70,15 +70,55 @@ const Navbar = (() => {
         </button>
       </li>`).join('');
 
+    // Mobil menüdeki ana sayfa geçişleri
+    const pageItems = [
+      { label: 'ANASAYFA', view: 'HOME' },
+      { label: 'İK', view: 'IK' },
+      { label: 'TEMİZLİK', view: 'TEMIZLIK' },
+      { label: 'ORGANİZASYON', view: 'ORGANIZATION' },
+      { label: 'LOJİSTİK', view: 'LOJISTIK' }
+    ];
+    
+    const mobilePagesLi = pageItems.map(p => `
+      <li>
+        <button class="nav-link ${p.view === view ? 'text-gold' : ''}" data-action="${Utils.registerAction(() => App.navigate(p.view))}">
+          ${p.label}
+        </button>
+      </li>`).join('');
+
     return `
       <header id="site-header" class="${darkMode ? 'dark-text' : ''}">
         <a id="zero-logo" href="#" onclick="App.goHome(event)">
           ZERO<span class="logo-second">${secondWord}</span>
           <span class="logo-active-page">${_activeSection}</span>
         </a>
+        
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Menü">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: block;"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+
         <nav class="desktop-nav" aria-label="Ana Navigasyon">
           <ul>${li}</ul>
         </nav>
+
+        <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+          <div class="mobile-menu-header">
+            <span class="mobile-menu-title">MENÜ</span>
+            <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Kapat">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: block;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+          </div>
+          
+          <div class="mobile-menu-section-title">Bu Sayfada</div>
+          <ul class="mobile-menu-links">
+            ${li}
+          </ul>
+
+          <div class="mobile-menu-section-title">Hizmetlerimiz</div>
+          <ul class="mobile-menu-links">
+            ${mobilePagesLi}
+          </ul>
+        </div>
       </header>`;
   }
 

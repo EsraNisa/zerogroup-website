@@ -181,6 +181,26 @@ const SECTION_LABELS = {
   function init() {
     // Navbar butonlarına tıklanıldığında ilgili aksiyonu çalıştırır
     document.addEventListener('click', (e) => {
+      // 1. Hamburger menü açma
+      if (e.target.closest('#mobile-menu-btn')) {
+        const overlay = document.getElementById('mobile-menu-overlay');
+        if (overlay) overlay.classList.add('active');
+        const header = document.getElementById('site-header');
+        if (header) header.classList.add('menu-active');
+        document.body.style.overflow = 'hidden'; // Kaydırmayı engelle
+        return;
+      }
+      
+      // 2. Hamburger menü kapatma
+      if (e.target.closest('#mobile-menu-close') || e.target.closest('.mobile-menu-overlay .nav-link')) {
+        const overlay = document.getElementById('mobile-menu-overlay');
+        if (overlay) overlay.classList.remove('active');
+        const header = document.getElementById('site-header');
+        if (header) header.classList.remove('menu-active');
+        document.body.style.overflow = ''; // Kaydırmayı geri aç
+      }
+
+      // 3. Normal link tıklamaları
       const btn = e.target.closest('.nav-link');
       if (btn && btn.dataset.action) {
         // Utils.runAction içindeki tırnakları temizleyerek çalıştırır

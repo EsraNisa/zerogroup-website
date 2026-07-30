@@ -128,6 +128,7 @@ input, textarea { cursor: text; }
   transition: color 0.3s;
   color: #fff;
 }
+.mobile-menu-btn, .mobile-menu-overlay { display: none; }
 #site-header.dark-text,
 #site-header.dark-text #zero-logo,
 #site-header.dark-text .nav-link {
@@ -606,6 +607,124 @@ a:focus:not(:focus-visible) { outline: none; }
   /* ---- Footer ---- */
   .footer-inner { padding: 3rem 1.5rem 1.5rem !important; }
   .footer-bg-text { font-size: 40vw !important; margin-bottom: -14vw !important; }
+
+  /* ---- Mobile Hamburger Menu ---- */
+  .mobile-menu-btn {
+    display: block !important;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 100;
+    padding: 0.5rem;
+  }
+
+  .mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+
+  .mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mobile-menu-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    color: #C5A059;
+  }
+
+  .mobile-menu-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .mobile-menu-section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    border-left: 2px solid #C5A059;
+    padding-left: 0.5rem;
+  }
+
+  .mobile-menu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mobile-menu-links li {
+    width: 100%;
+  }
+
+  .mobile-menu-links button, 
+  .mobile-menu-links a {
+    background: none;
+    border: none;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem 0;
+    transition: color 0.3s;
+  }
+
+  .mobile-menu-links button:hover, 
+  .mobile-menu-links a:hover {
+    color: #C5A059;
+  }
+
+  #site-header.dark-text .mobile-menu-btn {
+    color: #000 !important;
+  }
+
+  #site-header.menu-active {
+    z-index: 1001 !important;
+  }
 }
 
 /* ---- Utility colors ---- */
