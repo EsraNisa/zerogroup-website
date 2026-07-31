@@ -72,7 +72,6 @@ const Navbar = (() => {
 
     // Mobil menüdeki ana sayfa geçişleri
     const pageItems = [
-      { label: 'ANASAYFA', view: 'HOME' },
       { label: 'İK', view: 'IK' },
       { label: 'TEMİZLİK', view: 'TEMIZLIK' },
       { label: 'ORGANİZASYON', view: 'ORGANIZATION' },

@@ -72,6 +72,7 @@ selectCategory(idx) {
       
       // transitionend yerine setTimeout kullanarak resmi güvenli bir şekilde değiştir
       setTimeout(() => {
+        img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; // Eski resmi anında temizle
         img.src = DATA.images[cat.imageKey]; // Yeni resmi yükle
         img.alt = cat.label;
         img.style.opacity = '1'; // Resmi tekrar göster

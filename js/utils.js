@@ -31,7 +31,7 @@ const Utils = (() => {
     const el = document.getElementById(id);
     if (!el) return;
     const navH = document.querySelector('#site-header')?.offsetHeight || 80;
-    const top  = el.getBoundingClientRect().top + window.scrollY;
+    const top  = el.getBoundingClientRect().top + window.scrollY - navH;
     window.scrollTo({ top, behavior: 'smooth' });
   }
 

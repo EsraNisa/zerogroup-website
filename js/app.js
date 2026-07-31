@@ -118,7 +118,7 @@ const SECTION_LABELS = {
     if (mod.afterRender) mod.afterRender();
 
     _initScrollListener();
-    _initFooterObserver();
+    // _initFooterObserver();
 
     /* Force scroll event to set initial navbar color */
     setTimeout(() => window.dispatchEvent(new Event('scroll')), 50);
