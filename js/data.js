@@ -123,14 +123,6 @@ const DATA = {
       provider: 'Ankara Hizmet Sektörü Başarı Ödülleri',
       description: 'Teşekkür plaketleri, başarılı organizasyonların planlanması ve hayata geçirilmesinde emeği bulunan kurum ve iş ortaklarına, gösterdikleri özveri ve profesyonel katkılar dolayısıyla sunulan kurumsal takdir belgeleridir. Bu tür plaketler, güçlü iş birliklerinin ve başarılı projelerin simgesi olarak kabul edilir.',
       story: 'Zero Group, Vendetta etkinliğinin organizasyon sürecinde üstlendiği başarılı koordinasyon, ekip yönetimi ve operasyonel planlama sayesinde teşekkür plaketi ile onurlandırıldı. Etkinliğin her aşamasında gösterilen profesyonel yaklaşım ve kusursuz organizasyon yönetimi, şirketin etkinlik sektöründeki güçlü konumunu bir kez daha ortaya koydu.'
-    },
-    {
-      id: 'award-5',
-      name: 'Sürdürülebilir Büyüme ve İstihdam Ödülü',
-      year: '2025',
-      provider: 'Türkiye Girişimcilik Ödülleri',
-      description: 'Farklı sektörlerde yarattığımız yeni iş alanları, kadın istihdamına verdiğimiz destek ve istikrarlı büyüme modelimiz ile aldığımız ulusal çaptaki en prestijli başarımız.',
-      story: '2016 yılındaki kuruluşumuzdan bugüne yüzlerce gence ve uzmana kariyer fırsatı sunarak ülke ekonomisine ve istihdamına sağladığımız katkı ödüllendirildi.'
     }
   ],
 

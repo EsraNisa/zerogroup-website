@@ -15,12 +15,12 @@ const HomePage = {
         <video
           id="hero-vid"
           class="video-bg"
+          src="${videoSrc}"
           autoplay muted loop playsinline
           preload="auto"
           poster="${img.HOME_BG_VIDEO_POSTER}"
           aria-hidden="true"
         >
-          <source src="${videoSrc}" type="video/mp4" />
         </video>
         <div class="video-overlay" aria-hidden="true"></div>
         <div class="hero-content">

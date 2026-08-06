@@ -229,17 +229,13 @@ const Footer = {
 /* ---------- SectorHero ---------- */
 const SectorHero = {
   render({ title, desc, bgImage, mobileBgImage, id }) {
-    const imgHtml = mobileBgImage
-      ? `<picture style="display:block;width:100%;height:100%;">
-          <source media="(max-width: 768px)" srcset="${mobileBgImage}">
-          <img src="${bgImage}" alt="${title} - Zero Group arka plan" />
-         </picture>`
-      : `<img src="${bgImage}" alt="${title} - Zero Group arka plan" />`;
+    const isMobile = window.innerWidth <= 768;
+    const resolvedBg = (isMobile && mobileBgImage) ? mobileBgImage : bgImage;
 
     return `
       <section id="${id}" class="sector-hero" aria-label="${title}">
         <div class="sector-hero-bg" aria-hidden="true">
-          ${imgHtml}
+          <img src="${resolvedBg}" alt="${title} - Zero Group arka plan" />
           <div class="sector-hero-overlay"></div>
         </div>
         <div class="sector-hero-text">
