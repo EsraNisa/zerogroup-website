@@ -281,7 +281,7 @@ const TemizlikPage = {
     return `
       <div id="page-temizlik" style="width:100%;display:flex;flex-direction:column;background:#fff">
         ${Navbar.render('TEMIZLIK', false)}
-        ${SectorHero.render({ title: s.title, desc: s.desc, bgImage: img.TEMIZLIK_BG, id: 'temizlik-main' })}
+        ${SectorHero.render({ title: s.title, desc: s.desc, bgImage: img.TEMIZLIK_BG, mobileBgImage: img.TEMIZLIK_BG_MOBILE, id: 'temizlik-main' })}
         ${this.renderGaleri()}
         ${this.renderSplitCTA()}
         ${this.renderEkibimiz()}

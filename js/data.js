@@ -9,8 +9,10 @@ const DATA = {
   images: {
     HOME_BG_VIDEO_POSTER : './gorseller/zero-intro-poster.jpg',
     HOME_VIDEO           : './gorseller/zerotanitim.mp4',
+    HOME_VIDEO_MOBILE    : './gorseller/mobilzerotanitim.mp4',
     ORG_BG               : './gorseller/organizasyon-bg.jpg',
     IK_BG                : './gorseller/ik.jpg',
+    IK_BG_MOBILE         : './gorseller/mobilik.jpg',
     LOJISTIK_BG          : './gorseller/lojistik.jpg',
     PERSON_1             : './gorseller/person1.jpg',
     PERSON_2             : './gorseller/person2.jpg',
@@ -21,13 +23,14 @@ const DATA = {
     LOJ_MICRO            : './gorseller/loj-mikro.jpg',
     LOJ_SUPPLY           : './gorseller/loj-tedarik.jpg',
     LOJ_CONTACT_BG       : './gorseller/lojistik-contact.jpg',
-    IK_GARSON            : './gorseller/garson.jpg',
-    IK_CAGRI             : './gorseller/cagrimerkez.jpg',
+    IK_GARSON            : './gorseller/garson.webp',
+    IK_CAGRI             : './gorseller/cagrimerkez.webp',
     IK_RESEPSIYON        : './gorseller/resepsyonist.jpg',
     IK_STANT             : './gorseller/stant.jpg',
     IK_KATIL             : './gorseller/ikkatil.jpg',
     IK_TEKLIF            : './gorseller/ikteklif.jpg',
-    TEMIZLIK_BG: './gorseller/temizlik.jpg',
+    TEMIZLIK_BG          : './gorseller/temizlik.jpg',
+    TEMIZLIK_BG_MOBILE   : './gorseller/mobiltemizlik.jpg',
   },
 
   /* Temizlik galeri resimleri (10 adet) */
@@ -45,7 +48,14 @@ const DATA = {
   ],
 
   /* Polaroid resimleri (20 adet) */
-  polaroids: Array.from({ length: 20 }, (_, i) => `./gorseller/polaroid-${i + 1}.jpg`),
+  polaroids: Array.from({ length: 20 }, (_, i) => {
+    const num = i + 1;
+    const webpPolaroids = [8, 9, 10, 11, 12, 13, 19, 20];
+    if (webpPolaroids.includes(num)) {
+      return `./gorseller/polaroid-${num}.webp`;
+    }
+    return `./gorseller/polaroid-${num}.jpg`;
+  }),
 
   /* Afiş posterleri (10 adet) */
   posters: Array.from({ length: 10 }, (_, i) => `./gorseller/afis${i + 1}.jpg`),

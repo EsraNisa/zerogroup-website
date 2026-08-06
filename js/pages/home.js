@@ -8,6 +8,8 @@ const HomePage = {
   /* ---- Hero Video ---- */
   renderHero() {
     const img = DATA.images;
+    const isMobile = window.innerWidth <= 768;
+    const videoSrc = isMobile ? img.HOME_VIDEO_MOBILE : img.HOME_VIDEO;
     return `
       <section id="home-hero" class="hero-video-container" aria-label="Zero Group - Ankara Yönetim ve Hizmet Grubu">
         <video
@@ -18,7 +20,7 @@ const HomePage = {
           poster="${img.HOME_BG_VIDEO_POSTER}"
           aria-hidden="true"
         >
-          <source src="${img.HOME_VIDEO}" type="video/mp4" />
+          <source src="${videoSrc}" type="video/mp4" />
         </video>
         <div class="video-overlay" aria-hidden="true"></div>
         <div class="hero-content">

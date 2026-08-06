@@ -144,7 +144,7 @@ selectCategory(idx) {
     return `
       <div id="page-ik" style="width:100%;display:flex;flex-direction:column;background:#fff">
         ${Navbar.render('IK', false)}
-        ${SectorHero.render({ title: s.title, desc: s.desc, bgImage: img.IK_BG, id: 'ik-main' })}
+        ${SectorHero.render({ title: s.title, desc: s.desc, bgImage: img.IK_BG, mobileBgImage: img.IK_BG_MOBILE, id: 'ik-main' })}
         ${this.renderCategories()}
         ${this.renderContact()}
         ${Footer.render()}
